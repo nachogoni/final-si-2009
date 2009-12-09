@@ -105,7 +105,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>126</xloc>
+      <xloc>91</xloc>
       <yloc>189</yloc>
       </entry>
     <entry>
@@ -135,7 +135,7 @@
       </parameters>      <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>265</xloc>
+      <xloc>255</xloc>
       <yloc>190</yloc>
       </entry>
     <entry>
@@ -165,8 +165,8 @@
       </parameters>      <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>401</xloc>
-      <yloc>190</yloc>
+      <xloc>426</xloc>
+      <yloc>191</yloc>
       </entry>
   </entries>
   <hops>
