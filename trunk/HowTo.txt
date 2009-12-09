@@ -3,8 +3,6 @@ Pasos para empezar a trabajar:
 En la carpeta src estan las dos bases de datos iniciales, oltp.mdb y olap.mdb, hacer una copia donde querramos (hay una carpeta working_copy pasa eso si queres).
 Crear los dns de sistema hacia la copia de ambas bases de datos con oltp y olap como dns.
 Abrir el Pentaho Data Integration y elegir No repository.
-Abrir el Job que esta en src (Final_SI_JOB.kjb) y crear los Data connections a los dns olap y oltp (si no estan creados).
+Abrir el Job que esta en src (FINAL_SI.kjb) y crear los Data connections a los dns olap y oltp (si no estan creados).
 En la oltp, hacer click derecho, abrir el SQL Editor y crear la base de datos - src/create.sql - Ignorar los errores en los drops
-Abrir las transformaciones para la carga del OLTP (src/OLTP_*.ktr) - (TODO: crear las que falten a partir de los src/*.csv)
-Abrir las transformaciones para la carga al OLAP (src/OLAP_*.ktr) - (TODO: crear las que falten)
-...
+Ver las ETL*.ktr para ver como se hace todo
