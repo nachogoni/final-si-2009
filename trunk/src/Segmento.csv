@@ -1,0 +1,334 @@
+1;"Corporate";2
+2;"Corporate";2
+3;"Corporate";2
+4;"Corporate";2
+5;"Corporate";2
+6;"Corporate";2
+7;"Corporate";2
+8;"Corporate";2
+9;"Corporate";2
+10;"Corporate";2
+11;"Corporate";2
+12;"Corporate";2
+50;"Corporate";2
+51;"Corporate";2
+52;"Corporate";2
+53;"Corporate";2
+54;"Corporate";2
+55;"Corporate";2
+56;"Corporate";2
+57;"Corporate";2
+58;"Corporate";2
+59;"Corporate";2
+60;"Corporate";2
+99;"Corporate";2
+100;"P Consumers";6
+101;"P Consumers";6
+102;"P Consumers";6
+107;"P Interior";4
+200;"P Pymes";6
+201;"P Pymes";6
+202;"P Pymes";6
+207;"P Interior";4
+211;"P Pymes";6
+221;"Corporate";2
+300;"P Pymes";6
+301;"P Pymes";6
+302;"P Pymes";6
+307;"P Interior";4
+500;"Corporate";2
+501;"Resto Alianzas";1
+502;"Resto Alianzas";1
+503;"Resto Alianzas ";1
+504;"Resto Productores";6
+505;"Resto Alianzas";1
+506;"Ambrus";1
+507;"Ambrus";1
+508;"Resto Alianzas";1
+509;"Resto Alianzas";1
+510;"Resto Alianzas";1
+511;"Resto Alianzas";1
+512;"Resto Alianzas";1
+513;"Resto Alianzas";1
+514;"Corporate";2
+515;"Resto Alianzas";1
+516;"Banco Galicia";1
+517;"Resto Alianzas";1
+518;"Corporate";2
+519;"Resto Alianzas";1
+520;"Banco Boston";1
+521;"Resto Alianzas";1
+522;"Resto Alianzas";1
+523;"Resto Alianzas";1
+524;"Banco Frances";1
+525;"Resto Alianzas";1
+526;"Resto Alianzas";1
+527;"Resto Alianzas";1
+528;"Amex";1
+529;"Banco Galicia";1
+530;"Resto Productores";6
+531;"Resto Alianzas";1
+532;"Resto Alianzas";1
+533;"Resto Productores";6
+534;"Resto Alianzas";1
+535;"Resto Alianzas";1
+536;"Resto Alianzas";1
+537;"Resto Productores";6
+538;"Resto Productores";6
+539;"Directos";3
+540;"Resto Productores";6
+541;"Resto Productores";6
+542;"Resto Productores";6
+543;"Resto Productores";6
+544;"Directos";3
+545;"Resto Alianzas";1
+546;"Directos";3
+547;"Directos";3
+548;"Directos";3
+549;"Directos";3
+550;"Resto Productores";6
+551;"Directos";3
+552;"Resto Alianzas";1
+553;"Resto Productores";6
+554;"Directos";3
+555;"Directos";3
+556;"Resto Productores";6
+557;"Directos";3
+558;"Corporate";2
+559;"Resto Productores";6
+560;"Resto Productores";6
+561;"Resto Alianzas";1
+562;"Corporate";2
+563;"Directos";3
+564;"Directos";3
+565;"Resto Alianzas";1
+566;"Resto Productores";6
+567;"Resto Alianzas";1
+568;"Resto Alianzas";1
+569;"Banco Frances";1
+570;"Ambrus";1
+571;"Banco Boston";1
+572;"Resto Alianzas";1
+573;"Resto Alianzas";1
+574;"Resto Productores";6
+575;"Directos";3
+576;"Directos";3
+577;"Directos";3
+578;"Resto Productores";6
+579;"Resto Alianzas";1
+580;"Resto Alianzas";1
+581;"Resto Alianzas";1
+582;"Banco Galicia";1
+583;"Banco Galicia";1
+584;"Directos";3
+585;"Resto Productores";6
+586;"Resto Alianzas";1
+587;"Resto Alianzas";1
+588;"Resto Alianzas";1
+589;"Resto Productores";6
+590;"Resto Productores";6
+591;"Directos";3
+592;"Resto Alianzas";1
+593;"Banco Galicia";1
+594;"Banco Galicia";1
+595;"Ambrus";1
+596;"Resto Productores";6
+597;"Resto Productores";6
+598;"Resto Alianzas";1
+599;"Resto Alianzas";1
+600;"Resto Alianzas";1
+601;"Resto Productores";6
+602;"Resto Alianzas";1
+603;"Resto Alianzas";1
+604;"Resto Productores";6
+605;"Resto Alianzas";1
+606;"Resto Alianzas";1
+607;"Resto Productores";6
+608;"Resto Alianzas";1
+609;"Resto Productores";6
+610;"Resto Alianzas";1
+611;"Resto Alianzas";1
+612;"Resto Alianzas";1
+613;"Resto Alianzas";1
+614;"Resto Alianzas";1
+615;"Resto Alianzas";1
+616;"Resto Alianzas";1
+617;"Resto Alianzas";1
+618;"Resto Alianzas";1
+619;"Resto Alianzas";1
+620;"Resto Productores";6
+621;"Resto Alianzas";1
+622;"Resto Alianzas";1
+623;"Resto Alianzas";1
+624;"Directos";3
+625;"Resto Alianzas";1
+626;"Resto Alianzas";1
+627;"Resto Alianzas";1
+628;"Directos";3
+629;"Banco Galicia";1
+630;"Resto Alianzas";1
+631;"Resto Productores";6
+632;"Resto Productores";6
+633;"Resto Productores";6
+634;"Resto Productores";6
+635;"Resto Productores";6
+636;"Banco Galicia";1
+637;"Resto Alianzas";1
+638;"Resto Productores";6
+639;"Resto Productores";6
+640;"Resto Alianzas";1
+641;"Resto Productores";6
+642;"Resto Alianzas";1
+643;"Corporate";2
+644;"Resto Alianzas";1
+645;"Resto Alianzas";1
+646;"Directos";3
+647;"Directos";3
+648;"Corporate";2
+649;"Directos";3
+650;"Resto Alianzas";1
+651;"Directos";3
+652;"Metrogas";1
+653;"Resto Productores";6
+654;"Resto Alianzas";1
+655;"Directos";3
+656;"Directos";3
+657;"Resto Productores";6
+658;"Resto Alianzas";1
+659;"Resto Productores";6
+660;"Resto Alianzas";1
+661;"Corporate";2
+662;"Resto Productores";6
+663;"Banco Galicia";1
+664;"Resto Productores";6
+665;"Resto Productores";6
+666;"Resto Productores";6
+667;"Resto Alianzas";1
+668;"Resto Productores";6
+669;"Resto Productores";6
+670;"Resto Alianzas";1
+671;"Resto Alianzas";1
+672;"Resto Alianzas";1
+673;"Resto Alianzas";1
+674;"Resto Productores";6
+675;"Resto Alianzas";1
+676;"Resto Productores";6
+677;"Banco Frances";1
+678;"Resto Productores";6
+679;"Resto Productores";6
+680;"MBL";1
+681;"MBL";1
+682;"MBL";1
+683;"Directos";3
+684;"Resto Productores";6
+685;"Resto Productores";6
+686;"Resto Alianzas";1
+687;"Resto Alianzas";1
+688;"Resto Alianzas";1
+689;"Resto Productores";6
+690;"MBL";1
+691;"Resto Alianzas";1
+692;"Ford Credit";1
+693;"Ford Credit";1
+694;"Ford Credit";1
+695;"Ford Credit";1
+696;"Ford Credit";1
+697;"Ford Credit";1
+698;"Resto Productores";6
+699;"Resto Productores";6
+700;"Ford Credit";1
+701;"Ford Credit";1
+702;"Resto Alianzas";1
+703;"Resto Alianzas";1
+704;"Resto Productores";6
+705;"Resto Alianzas";1
+706;"Directos";3
+707;"Resto Productores";6
+708;"Banco Boston";1
+709;"Banco Galicia";1
+710;"Resto Alianzas";1
+711;"MBL";1
+712;"Resto Alianzas";1
+713;"Resto Alianzas";1
+714;"Resto Alianzas";1
+715;"Banco Frances";1
+716;"Banco Frances";1
+717;"MBL";1
+718;"MBL";1
+719;"MBL";1
+720;"Banco Frances";1
+721;"Banco Frances";1
+722;"Banco Frances";1
+723;"Resto Alianzas";1
+724;"Resto Alianzas";1
+725;"Corporate";2
+726;"Resto Alianzas";1
+727;"Resto Alianzas";1
+728;"Resto Alianzas";1
+729;"Resto Alianzas";1
+730;"Resto Alianzas";1
+731;"Resto Alianzas";1
+732;"Resto Alianzas";1
+733;"Resto Alianzas";1
+734;"Resto Alianzas";1
+735;"Resto Alianzas";1
+736;"Resto Alianzas";1
+737;"Resto Alianzas";1
+738;"Corporate";2
+740;"Resto Alianzas";1
+741;"Resto Alianzas";1
+742;"Resto Alianzas";1
+743;"Resto Alianzas";1
+744;"Corporate";2
+745;"Corporate";2
+746;"Corporate";2
+747;"Banco Galicia";1
+748;"Banco Galicia";1
+749;"Banco Frances";1
+750;"Banco Frances";1
+751;"Banco Frances";1
+752;"Banco Frances";1
+753;"Banco Frances";1
+754;"Banco Frances";1
+755;"Banco Frances";1
+756;"Directos";3
+757;"Banco Frances";1
+758;"Banco Boston";1
+759;"Banco Boston";1
+760;"Cross Sell";3
+761;"Corporate";2
+762;"Corporate";2
+763;"Resto Alianzas";1
+780;"Citibank";1
+781;"Citibank";1
+782;"Citibank";1
+783;"Ford Credit";1
+784;"Resto Alianzas";1
+785;"Citibank";1
+790;"Ambrus";1
+791;"Ambrus";1
+800;"Corporate";2
+892;"Ford Credit";1
+893;"Ford Credit";1
+894;"Ford Credit";1
+895;"Ford Credit";1
+896;"Ford Credit";1
+897;"Ford Credit";1
+900;"Directos";3
+901;"Directos";3
+902;"Directos";3
+903;"Tarjeta Naranja";3
+904;"Direct TV";3
+905;"Mastercard";3
+906;"Cross Sell Clipper";3
+907;"Provencred";3
+908;"Directos Z";3
+909;"Directos";3
+910;"Directos";3
+911;"Directos";3
+912;"Directos";3
+913;"Directos";3
+914;"Directos";3
+915;"Directos";3
+919;"Referidos";3
+999;"INDETERMINADO  ";5
