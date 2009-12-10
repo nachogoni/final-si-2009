@@ -7,4 +7,4 @@ Abrir el Pentaho Data Integration y elegir No repository.
 
 ::Ejecucion::
 Abrir el Job que esta en src (FINAL_SI.kjb).
-Darle play. Considerar que cada vez que se quiere ejecutar hay que borrar las tablas creadas en OLAP.mdb
+Darle play.
