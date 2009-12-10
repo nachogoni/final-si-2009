@@ -247,40 +247,8 @@
     </lookup>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>543</xloc>
-      <yloc>221</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Table input</name>
-    <type>TableInput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <connection>oltp</connection>
-    <sql>SELECT
-  Agentes.SOC
-, Agentes.FLIA
-, Agentes.Nombre
-, Agentes.ESTADO
-, Agentes.FEC_ALTA
-FROM Agentes, Productor 
-WHERE Agentes.FLIA = Productor.FLIA</sql>
-    <limit>0</limit>
-    <lookup/>
-    <execute_each_row>N</execute_each_row>
-    <variables_active>N</variables_active>
-    <lazy_conversion_active>N</lazy_conversion_active>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>198</xloc>
-      <yloc>125</yloc>
+      <xloc>544</xloc>
+      <yloc>216</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -364,40 +332,6 @@ WHERE Agentes.FLIA = Productor.FLIA</sql>
     </step>
 
   <step>
-    <name>Table input 2</name>
-    <type>TableInput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <connection>oltp</connection>
-    <sql>SELECT
-  Agentes.SOC
-, 0 AS FLIA
-, Agentes.Nombre
-, Agentes.ESTADO
-, Agentes.FEC_ALTA
-FROM Agentes
-WHERE Agentes.FLIA NOT IN
-(SELECT FLIA
-FROM Productor)</sql>
-    <limit>0</limit>
-    <lookup/>
-    <execute_each_row>N</execute_each_row>
-    <variables_active>N</variables_active>
-    <lazy_conversion_active>N</lazy_conversion_active>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>197</xloc>
-      <yloc>317</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
     <name>Select values 2 2</name>
     <type>SelectValues</type>
     <description/>
@@ -432,6 +366,72 @@ FROM Productor)</sql>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
       <xloc>367</xloc>
       <yloc>318</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Table input</name>
+    <type>TableInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>oltp</connection>
+    <sql>SELECT
+  Agentes.SOC
+, Agentes.FLIA
+, Agentes.Nombre
+, Agentes.ESTADO
+, Agentes.FEC_ALTA
+FROM Agentes, Productor 
+WHERE Agentes.FLIA = Productor.FLIA</sql>
+    <limit>0</limit>
+    <lookup/>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>198</xloc>
+      <yloc>125</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Table input 2</name>
+    <type>TableInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>oltp</connection>
+    <sql>SELECT
+  Agentes.SOC
+, 0 AS FLIA
+, Agentes.Nombre
+, Agentes.ESTADO
+, Agentes.FEC_ALTA
+FROM Agentes
+WHERE Agentes.FLIA NOT IN
+(SELECT FLIA
+FROM Productor)</sql>
+    <limit>0</limit>
+    <lookup/>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>197</xloc>
+      <yloc>317</yloc>
       <draw>Y</draw>
       </GUI>
     </step>

@@ -106,7 +106,7 @@
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>71</xloc>
-      <yloc>173</yloc>
+      <yloc>203</yloc>
       </entry>
     <entry>
       <name>ETL_PRODUCTOR</name>
@@ -134,8 +134,8 @@
       </parameters>      <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>321</xloc>
-      <yloc>265</yloc>
+      <xloc>387</xloc>
+      <yloc>126</yloc>
       </entry>
     <entry>
       <name>ETL_AGENTES</name>
@@ -163,8 +163,8 @@
       </parameters>      <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>550</xloc>
-      <yloc>105</yloc>
+      <xloc>554</xloc>
+      <yloc>126</yloc>
       </entry>
     <entry>
       <name>OLAP_TABLE_CREATION</name>
@@ -178,8 +178,51 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>239</xloc>
-      <yloc>126</yloc>
+      <xloc>222</xloc>
+      <yloc>49</yloc>
+      </entry>
+    <entry>
+      <name>ETL_PROVINCIAS</name>
+      <description>Transformation</description>
+      <type>TRANS</type>
+      <filename>${Internal.Job.Filename.Directory}&#47;ETL_PROVINCIAS.ktr</filename>
+      <transname/>
+      <directory/>
+      <arg_from_previous>N</arg_from_previous>
+      <params_from_previous>N</params_from_previous>
+      <exec_per_row>N</exec_per_row>
+      <clear_rows>N</clear_rows>
+      <clear_files>N</clear_files>
+      <set_logfile>N</set_logfile>
+      <logfile/>
+      <logext/>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <loglevel>Nothing</loglevel>
+      <cluster>N</cluster>
+      <slave_server_name/>
+      <set_append_logfile>N</set_append_logfile>
+      <wait_until_finished>Y</wait_until_finished>
+      <follow_abort_remote>N</follow_abort_remote>
+      <parameters>        <pass_all_parameters>Y</pass_all_parameters>
+      </parameters>      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>688</xloc>
+      <yloc>121</yloc>
+      </entry>
+    <entry>
+      <name>OLAP_IS_NOT_EMPTY</name>
+      <description>Table exists</description>
+      <type>TABLE_EXISTS</type>
+      <tablename>LU_PRODUCTOR</tablename>
+      <schemaname/>
+      <connection>olap</connection>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>204</xloc>
+      <yloc>167</yloc>
       </entry>
   </entries>
   <hops>
@@ -193,8 +236,26 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
+      <from>OLAP_TABLE_CREATION</from>
+      <to>ETL_PRODUCTOR</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>ETL_AGENTES</from>
+      <to>ETL_PROVINCIAS</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
       <from>START</from>
-      <to>OLAP_TABLE_CREATION</to>
+      <to>OLAP_IS_NOT_EMPTY</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -202,12 +263,21 @@
       <unconditional>Y</unconditional>
     </hop>
     <hop>
-      <from>OLAP_TABLE_CREATION</from>
+      <from>OLAP_IS_NOT_EMPTY</from>
       <to>ETL_PRODUCTOR</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
       <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>OLAP_IS_NOT_EMPTY</from>
+      <to>OLAP_TABLE_CREATION</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
       <unconditional>N</unconditional>
     </hop>
   </hops>
