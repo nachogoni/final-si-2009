@@ -105,8 +105,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>71</xloc>
-      <yloc>203</yloc>
+      <xloc>39</xloc>
+      <yloc>199</yloc>
       </entry>
     <entry>
       <name>ETL_PRODUCTOR</name>
@@ -134,8 +134,8 @@
       </parameters>      <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>387</xloc>
-      <yloc>126</yloc>
+      <xloc>327</xloc>
+      <yloc>142</yloc>
       </entry>
     <entry>
       <name>ETL_AGENTES</name>
@@ -163,29 +163,95 @@
       </parameters>      <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>554</xloc>
-      <yloc>126</yloc>
+      <xloc>436</xloc>
+      <yloc>143</yloc>
       </entry>
     <entry>
-      <name>OLAP_TABLE_CREATION</name>
+      <name>PRODUCTOR_TABLE_CREATION</name>
       <description>SQL</description>
       <type>SQL</type>
-      <sql/>
+      <sql>CREATE TABLE LU_PRODUCTOR
+(
+  PRODUCTOR_ID INTEGER
+, PRODUCTOR_NOMBRE TEXT
+)
+;CREATE INDEX idx_LU_PRODUCTOR_lookup
+ ON LU_PRODUCTOR
+( 
+  PRODUCTOR_ID
+)
+;
+CREATE TABLE LU_AGENTE
+(
+  AGENTE_ID INTEGER
+, PRODUCTOR_ID INTEGER
+, AGENTE_NOMBRE TEXT(255)
+, AGENTE_ESTADO TEXT(1)
+, AGENTE_FECHA_ALTA LONG
+)
+;CREATE INDEX idx_LU_AGENTE_lookup
+ ON LU_AGENTE
+( 
+  AGENTE_ID
+)
+;</sql>
       <useVariableSubstitution>F</useVariableSubstitution>
-      <sqlfromfile>T</sqlfromfile>
+      <sqlfromfile>F</sqlfromfile>
       <sqlfilename>${Internal.Job.Filename.Directory}&#47;olap.sql</sqlfilename>
       <connection>olap</connection>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>222</xloc>
-      <yloc>49</yloc>
+      <xloc>263</xloc>
+      <yloc>69</yloc>
       </entry>
     <entry>
       <name>ETL_PROVINCIAS</name>
       <description>Transformation</description>
       <type>TRANS</type>
       <filename>${Internal.Job.Filename.Directory}&#47;ETL_PROVINCIAS.ktr</filename>
+      <transname/>
+      <arg_from_previous>N</arg_from_previous>
+      <params_from_previous>N</params_from_previous>
+      <exec_per_row>N</exec_per_row>
+      <clear_rows>N</clear_rows>
+      <clear_files>N</clear_files>
+      <set_logfile>N</set_logfile>
+      <logfile/>
+      <logext/>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <loglevel>Nothing</loglevel>
+      <cluster>N</cluster>
+      <slave_server_name/>
+      <set_append_logfile>N</set_append_logfile>
+      <wait_until_finished>Y</wait_until_finished>
+      <follow_abort_remote>N</follow_abort_remote>
+      <parameters>        <pass_all_parameters>Y</pass_all_parameters>
+      </parameters>      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>304</xloc>
+      <yloc>270</yloc>
+      </entry>
+    <entry>
+      <name>PRODUCTOR_TABLE_EXIST</name>
+      <description>Table exists</description>
+      <type>TABLE_EXISTS</type>
+      <tablename>LU_PRODUCTOR</tablename>
+      <schemaname/>
+      <connection>olap</connection>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>197</xloc>
+      <yloc>141</yloc>
+      </entry>
+    <entry>
+      <name>ETL_LOCALIDADES</name>
+      <description>Transformation</description>
+      <type>TRANS</type>
+      <filename>${Internal.Job.Filename.Directory}&#47;ETL_LOCALIDADES.ktr</filename>
       <transname/>
       <directory/>
       <arg_from_previous>N</arg_from_previous>
@@ -208,21 +274,173 @@
       </parameters>      <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>688</xloc>
-      <yloc>121</yloc>
+      <xloc>472</xloc>
+      <yloc>267</yloc>
       </entry>
     <entry>
-      <name>OLAP_IS_NOT_EMPTY</name>
+      <name>ETL_SEGMENTOS</name>
+      <description>Transformation</description>
+      <type>TRANS</type>
+      <filename>${Internal.Job.Filename.Directory}&#47;ETL_SEGMENTOS.ktr</filename>
+      <transname/>
+      <directory/>
+      <arg_from_previous>N</arg_from_previous>
+      <params_from_previous>N</params_from_previous>
+      <exec_per_row>N</exec_per_row>
+      <clear_rows>N</clear_rows>
+      <clear_files>N</clear_files>
+      <set_logfile>N</set_logfile>
+      <logfile/>
+      <logext/>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <loglevel>Nothing</loglevel>
+      <cluster>N</cluster>
+      <slave_server_name/>
+      <set_append_logfile>N</set_append_logfile>
+      <wait_until_finished>Y</wait_until_finished>
+      <follow_abort_remote>N</follow_abort_remote>
+      <parameters>        <pass_all_parameters>Y</pass_all_parameters>
+      </parameters>      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>480</xloc>
+      <yloc>347</yloc>
+      </entry>
+    <entry>
+      <name>ETL_CANALES</name>
+      <description>Transformation</description>
+      <type>TRANS</type>
+      <filename>${Internal.Job.Filename.Directory}&#47;ETL_CANALES.ktr</filename>
+      <transname/>
+      <directory/>
+      <arg_from_previous>N</arg_from_previous>
+      <params_from_previous>N</params_from_previous>
+      <exec_per_row>N</exec_per_row>
+      <clear_rows>N</clear_rows>
+      <clear_files>N</clear_files>
+      <set_logfile>N</set_logfile>
+      <logfile/>
+      <logext/>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <loglevel>Nothing</loglevel>
+      <cluster>N</cluster>
+      <slave_server_name/>
+      <set_append_logfile>N</set_append_logfile>
+      <wait_until_finished>Y</wait_until_finished>
+      <follow_abort_remote>N</follow_abort_remote>
+      <parameters>        <pass_all_parameters>Y</pass_all_parameters>
+      </parameters>      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>348</xloc>
+      <yloc>350</yloc>
+      </entry>
+    <entry>
+      <name>PROVINCIA_TABLE_EXIST</name>
       <description>Table exists</description>
       <type>TABLE_EXISTS</type>
-      <tablename>LU_PRODUCTOR</tablename>
+      <tablename>LU_PROVINCIA</tablename>
       <schemaname/>
       <connection>olap</connection>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>204</xloc>
-      <yloc>167</yloc>
+      <xloc>184</xloc>
+      <yloc>220</yloc>
+      </entry>
+    <entry>
+      <name>CANAL_TABLE_EXIST</name>
+      <description>Table exists</description>
+      <type>TABLE_EXISTS</type>
+      <tablename>LU_CANAL</tablename>
+      <schemaname/>
+      <connection>olap</connection>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>145</xloc>
+      <yloc>370</yloc>
+      </entry>
+    <entry>
+      <name>PROVINCIA_TABLE_CREATION</name>
+      <description>SQL</description>
+      <type>SQL</type>
+      <sql>CREATE TABLE LU_PROVINCIA
+(
+  PROVINCIA_ID LONG
+, PROVINCIA_NOMBRE TEXT(30)
+)
+;CREATE INDEX idx_LU_PROVINCIA_lookup
+ ON LU_PROVINCIA
+( 
+  PROVINCIA_ID
+)
+;
+
+CREATE TABLE LU_LOCALIDAD
+(
+  LOCALIDAD_ID LONG
+, PROVINCIA_ID LONG
+, LOCALIDAD_NOMBRE TEXT(30)
+)
+;CREATE INDEX idx_LU_LOCALIDAD_lookup
+ ON LU_LOCALIDAD
+( 
+  LOCALIDAD_ID
+, PROVINCIA_ID
+)
+;</sql>
+      <useVariableSubstitution>F</useVariableSubstitution>
+      <sqlfromfile>F</sqlfromfile>
+      <sqlfilename/>
+      <connection>olap</connection>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>337</xloc>
+      <yloc>202</yloc>
+      </entry>
+    <entry>
+      <name>CANAL_TABLE_CREATION</name>
+      <description>SQL</description>
+      <type>SQL</type>
+      <sql>CREATE TABLE LU_CANAL
+(
+  CANAL_ID LONG
+, CANAL_NOMBRE TEXT(255)
+)
+;CREATE INDEX idx_LU_CANAL_lookup
+ ON LU_CANAL
+( 
+  CANAL_ID
+)
+;
+
+CREATE TABLE LU_SEGMENTO
+(
+  SEGMENTO_ID INTEGER
+, CANAL_ID TEXT(255)
+, SEGMENTO_NOMBRE LONG
+)
+;CREATE INDEX idx_LU_SEGMENTO_lookup
+ ON LU_SEGMENTO
+( 
+  SEGMENTO_ID
+)
+;
+
+</sql>
+      <useVariableSubstitution>F</useVariableSubstitution>
+      <sqlfromfile>F</sqlfromfile>
+      <sqlfilename/>
+      <connection>olap</connection>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>222</xloc>
+      <yloc>308</yloc>
       </entry>
   </entries>
   <hops>
@@ -236,17 +454,8 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>OLAP_TABLE_CREATION</from>
+      <from>PRODUCTOR_TABLE_CREATION</from>
       <to>ETL_PRODUCTOR</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>ETL_AGENTES</from>
-      <to>ETL_PROVINCIAS</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -255,7 +464,7 @@
     </hop>
     <hop>
       <from>START</from>
-      <to>OLAP_IS_NOT_EMPTY</to>
+      <to>PRODUCTOR_TABLE_EXIST</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -263,7 +472,7 @@
       <unconditional>Y</unconditional>
     </hop>
     <hop>
-      <from>OLAP_IS_NOT_EMPTY</from>
+      <from>PRODUCTOR_TABLE_EXIST</from>
       <to>ETL_PRODUCTOR</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
@@ -272,12 +481,102 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>OLAP_IS_NOT_EMPTY</from>
-      <to>OLAP_TABLE_CREATION</to>
+      <from>PRODUCTOR_TABLE_EXIST</from>
+      <to>PRODUCTOR_TABLE_CREATION</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
       <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>ETL_CANALES</from>
+      <to>ETL_SEGMENTOS</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>ETL_PROVINCIAS</from>
+      <to>ETL_LOCALIDADES</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>START</from>
+      <to>PROVINCIA_TABLE_EXIST</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>START</from>
+      <to>CANAL_TABLE_EXIST</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>PROVINCIA_TABLE_EXIST</from>
+      <to>ETL_PROVINCIAS</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>CANAL_TABLE_EXIST</from>
+      <to>ETL_CANALES</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>PROVINCIA_TABLE_EXIST</from>
+      <to>PROVINCIA_TABLE_CREATION</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>PROVINCIA_TABLE_CREATION</from>
+      <to>ETL_PROVINCIAS</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>CANAL_TABLE_EXIST</from>
+      <to>CANAL_TABLE_CREATION</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>CANAL_TABLE_CREATION</from>
+      <to>ETL_CANALES</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
       <unconditional>N</unconditional>
     </hop>
   </hops>
