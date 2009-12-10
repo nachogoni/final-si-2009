@@ -105,8 +105,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>91</xloc>
-      <yloc>189</yloc>
+      <xloc>71</xloc>
+      <yloc>173</yloc>
       </entry>
     <entry>
       <name>ETL_PRODUCTOR</name>
@@ -114,7 +114,6 @@
       <type>TRANS</type>
       <filename>${Internal.Job.Filename.Directory}&#47;ETL_PRODUCTOR.ktr</filename>
       <transname/>
-      <directory/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
       <exec_per_row>N</exec_per_row>
@@ -135,8 +134,8 @@
       </parameters>      <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>255</xloc>
-      <yloc>190</yloc>
+      <xloc>321</xloc>
+      <yloc>265</yloc>
       </entry>
     <entry>
       <name>ETL_AGENTES</name>
@@ -144,7 +143,6 @@
       <type>TRANS</type>
       <filename>${Internal.Job.Filename.Directory}&#47;ETL_AGENTE.ktr</filename>
       <transname/>
-      <directory/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
       <exec_per_row>N</exec_per_row>
@@ -165,14 +163,38 @@
       </parameters>      <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>426</xloc>
-      <yloc>191</yloc>
+      <xloc>550</xloc>
+      <yloc>105</yloc>
+      </entry>
+    <entry>
+      <name>OLAP_TABLE_CREATION</name>
+      <description>SQL</description>
+      <type>SQL</type>
+      <sql/>
+      <useVariableSubstitution>F</useVariableSubstitution>
+      <sqlfromfile>T</sqlfromfile>
+      <sqlfilename>${Internal.Job.Filename.Directory}&#47;olap.sql</sqlfilename>
+      <connection>olap</connection>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>239</xloc>
+      <yloc>126</yloc>
       </entry>
   </entries>
   <hops>
     <hop>
+      <from>ETL_PRODUCTOR</from>
+      <to>ETL_AGENTES</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
       <from>START</from>
-      <to>ETL_PRODUCTOR</to>
+      <to>OLAP_TABLE_CREATION</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -180,8 +202,8 @@
       <unconditional>Y</unconditional>
     </hop>
     <hop>
-      <from>ETL_PRODUCTOR</from>
-      <to>ETL_AGENTES</to>
+      <from>OLAP_TABLE_CREATION</from>
+      <to>ETL_PRODUCTOR</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
