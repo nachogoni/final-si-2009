@@ -360,8 +360,8 @@ CREATE TABLE LU_AGENTE
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>145</xloc>
-      <yloc>370</yloc>
+      <xloc>92</xloc>
+      <yloc>347</yloc>
       </entry>
     <entry>
       <name>PROVINCIA_TABLE_CREATION</name>
