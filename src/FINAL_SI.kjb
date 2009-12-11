@@ -134,8 +134,8 @@
       </parameters>      <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>327</xloc>
-      <yloc>142</yloc>
+      <xloc>438</xloc>
+      <yloc>114</yloc>
       </entry>
     <entry>
       <name>ETL_AGENTES</name>
@@ -163,8 +163,8 @@
       </parameters>      <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>436</xloc>
-      <yloc>143</yloc>
+      <xloc>742</xloc>
+      <yloc>112</yloc>
       </entry>
     <entry>
       <name>PRODUCTOR_TABLE_CREATION</name>
@@ -180,20 +180,6 @@
 ( 
   PRODUCTOR_ID
 )
-;
-CREATE TABLE LU_AGENTE
-(
-  AGENTE_ID INTEGER
-, PRODUCTOR_ID INTEGER
-, AGENTE_NOMBRE TEXT(255)
-, AGENTE_ESTADO TEXT(1)
-, AGENTE_FECHA_ALTA LONG
-)
-;CREATE INDEX idx_LU_AGENTE_lookup
- ON LU_AGENTE
-( 
-  AGENTE_ID
-)
 ;</sql>
       <useVariableSubstitution>F</useVariableSubstitution>
       <sqlfromfile>F</sqlfromfile>
@@ -202,8 +188,8 @@ CREATE TABLE LU_AGENTE
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>263</xloc>
-      <yloc>69</yloc>
+      <xloc>400</xloc>
+      <yloc>22</yloc>
       </entry>
     <entry>
       <name>ETL_PROVINCIAS</name>
@@ -231,8 +217,8 @@ CREATE TABLE LU_AGENTE
       </parameters>      <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>304</xloc>
-      <yloc>270</yloc>
+      <xloc>439</xloc>
+      <yloc>279</yloc>
       </entry>
     <entry>
       <name>PRODUCTOR_TABLE_EXIST</name>
@@ -244,8 +230,8 @@ CREATE TABLE LU_AGENTE
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>197</xloc>
-      <yloc>141</yloc>
+      <xloc>308</xloc>
+      <yloc>113</yloc>
       </entry>
     <entry>
       <name>ETL_LOCALIDADES</name>
@@ -253,7 +239,6 @@ CREATE TABLE LU_AGENTE
       <type>TRANS</type>
       <filename>${Internal.Job.Filename.Directory}&#47;ETL_LOCALIDADES.ktr</filename>
       <transname/>
-      <directory/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
       <exec_per_row>N</exec_per_row>
@@ -274,8 +259,8 @@ CREATE TABLE LU_AGENTE
       </parameters>      <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>472</xloc>
-      <yloc>267</yloc>
+      <xloc>770</xloc>
+      <yloc>278</yloc>
       </entry>
     <entry>
       <name>ETL_SEGMENTOS</name>
@@ -283,7 +268,6 @@ CREATE TABLE LU_AGENTE
       <type>TRANS</type>
       <filename>${Internal.Job.Filename.Directory}&#47;ETL_SEGMENTOS.ktr</filename>
       <transname/>
-      <directory/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
       <exec_per_row>N</exec_per_row>
@@ -304,8 +288,8 @@ CREATE TABLE LU_AGENTE
       </parameters>      <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>480</xloc>
-      <yloc>347</yloc>
+      <xloc>798</xloc>
+      <yloc>447</yloc>
       </entry>
     <entry>
       <name>ETL_CANALES</name>
@@ -313,7 +297,6 @@ CREATE TABLE LU_AGENTE
       <type>TRANS</type>
       <filename>${Internal.Job.Filename.Directory}&#47;ETL_CANALES.ktr</filename>
       <transname/>
-      <directory/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
       <exec_per_row>N</exec_per_row>
@@ -334,8 +317,8 @@ CREATE TABLE LU_AGENTE
       </parameters>      <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>348</xloc>
-      <yloc>350</yloc>
+      <xloc>467</xloc>
+      <yloc>449</yloc>
       </entry>
     <entry>
       <name>PROVINCIA_TABLE_EXIST</name>
@@ -347,8 +330,8 @@ CREATE TABLE LU_AGENTE
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>184</xloc>
-      <yloc>220</yloc>
+      <xloc>291</xloc>
+      <yloc>267</yloc>
       </entry>
     <entry>
       <name>CANAL_TABLE_EXIST</name>
@@ -360,8 +343,8 @@ CREATE TABLE LU_AGENTE
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>92</xloc>
-      <yloc>347</yloc>
+      <xloc>249</xloc>
+      <yloc>438</yloc>
       </entry>
     <entry>
       <name>PROVINCIA_TABLE_CREATION</name>
@@ -377,20 +360,6 @@ CREATE TABLE LU_AGENTE
 ( 
   PROVINCIA_ID
 )
-;
-
-CREATE TABLE LU_LOCALIDAD
-(
-  LOCALIDAD_ID LONG
-, PROVINCIA_ID LONG
-, LOCALIDAD_NOMBRE TEXT(30)
-)
-;CREATE INDEX idx_LU_LOCALIDAD_lookup
- ON LU_LOCALIDAD
-( 
-  LOCALIDAD_ID
-, PROVINCIA_ID
-)
 ;</sql>
       <useVariableSubstitution>F</useVariableSubstitution>
       <sqlfromfile>F</sqlfromfile>
@@ -399,8 +368,8 @@ CREATE TABLE LU_LOCALIDAD
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>337</xloc>
-      <yloc>202</yloc>
+      <xloc>394</xloc>
+      <yloc>192</yloc>
       </entry>
     <entry>
       <name>CANAL_TABLE_CREATION</name>
@@ -439,20 +408,133 @@ CREATE TABLE LU_SEGMENTO
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>222</xloc>
-      <yloc>308</yloc>
+      <xloc>374</xloc>
+      <yloc>364</yloc>
+      </entry>
+    <entry>
+      <name>AGENTES_TABLE_CREATION</name>
+      <description>SQL</description>
+      <type>SQL</type>
+      <sql>CREATE TABLE LU_AGENTE
+(
+  AGENTE_ID INTEGER
+, PRODUCTOR_ID INTEGER
+, AGENTE_NOMBRE TEXT(255)
+, AGENTE_ESTADO TEXT(1)
+, AGENTE_FECHA_ALTA LONG
+)
+;CREATE INDEX idx_LU_AGENTE_lookup
+ ON LU_AGENTE
+( 
+  AGENTE_ID
+)
+;</sql>
+      <useVariableSubstitution>F</useVariableSubstitution>
+      <sqlfromfile>F</sqlfromfile>
+      <sqlfilename>${Internal.Job.Filename.Directory}&#47;olap.sql</sqlfilename>
+      <connection>olap</connection>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>645</xloc>
+      <yloc>12</yloc>
+      </entry>
+    <entry>
+      <name>AGENTES_TABLE_EXIST</name>
+      <description>Table exists</description>
+      <type>TABLE_EXISTS</type>
+      <tablename>LU_AGENTES</tablename>
+      <schemaname/>
+      <connection>olap</connection>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>586</xloc>
+      <yloc>106</yloc>
+      </entry>
+    <entry>
+      <name>LOCALIDADES_TABLE_EXIST</name>
+      <description>Table exists</description>
+      <type>TABLE_EXISTS</type>
+      <tablename>LU_LOCALIDADES</tablename>
+      <schemaname/>
+      <connection>olap</connection>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>596</xloc>
+      <yloc>276</yloc>
+      </entry>
+    <entry>
+      <name>LOCALIDADES_TABLE_CREATION</name>
+      <description>SQL</description>
+      <type>SQL</type>
+      <sql>CREATE TABLE LU_LOCALIDAD
+(
+  LOCALIDAD_ID LONG
+, PROVINCIA_ID LONG
+, LOCALIDAD_NOMBRE TEXT(30)
+)
+;CREATE INDEX idx_LU_LOCALIDAD_lookup
+ ON LU_LOCALIDAD
+( 
+  LOCALIDAD_ID
+, PROVINCIA_ID
+)
+;</sql>
+      <useVariableSubstitution>F</useVariableSubstitution>
+      <sqlfromfile>F</sqlfromfile>
+      <sqlfilename/>
+      <connection>olap</connection>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>674</xloc>
+      <yloc>201</yloc>
+      </entry>
+    <entry>
+      <name>SEGMENTOS_TABLE_EXIST</name>
+      <description>Table exists</description>
+      <type>TABLE_EXISTS</type>
+      <tablename>LU_SEGMENTOS</tablename>
+      <schemaname/>
+      <connection>olap</connection>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>588</xloc>
+      <yloc>443</yloc>
+      </entry>
+    <entry>
+      <name>SEGMENTOS_TABLE_CREATION</name>
+      <description>SQL</description>
+      <type>SQL</type>
+      <sql>CREATE TABLE LU_SEGMENTO
+(
+  SEGMENTO_ID INTEGER
+, SEGMENTO_NOMBRE TEXT(255)
+, CANAL_ID LONG
+)
+;CREATE INDEX idx_LU_SEGMENTO_lookup
+ ON LU_SEGMENTO
+( 
+  SEGMENTO_ID
+)
+;
+
+</sql>
+      <useVariableSubstitution>F</useVariableSubstitution>
+      <sqlfromfile>F</sqlfromfile>
+      <sqlfilename/>
+      <connection>olap</connection>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>678</xloc>
+      <yloc>353</yloc>
       </entry>
   </entries>
   <hops>
-    <hop>
-      <from>ETL_PRODUCTOR</from>
-      <to>ETL_AGENTES</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
     <hop>
       <from>PRODUCTOR_TABLE_CREATION</from>
       <to>ETL_PRODUCTOR</to>
@@ -487,24 +569,6 @@ CREATE TABLE LU_SEGMENTO
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
       <evaluation>N</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>ETL_CANALES</from>
-      <to>ETL_SEGMENTOS</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>ETL_PROVINCIAS</from>
-      <to>ETL_LOCALIDADES</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
       <unconditional>N</unconditional>
     </hop>
     <hop>
@@ -573,6 +637,114 @@ CREATE TABLE LU_SEGMENTO
     <hop>
       <from>CANAL_TABLE_CREATION</from>
       <to>ETL_CANALES</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>ETL_PRODUCTOR</from>
+      <to>AGENTES_TABLE_EXIST</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>AGENTES_TABLE_EXIST</from>
+      <to>ETL_AGENTES</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>AGENTES_TABLE_EXIST</from>
+      <to>AGENTES_TABLE_CREATION</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>AGENTES_TABLE_CREATION</from>
+      <to>ETL_AGENTES</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>ETL_PROVINCIAS</from>
+      <to>LOCALIDADES_TABLE_EXIST</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>LOCALIDADES_TABLE_EXIST</from>
+      <to>ETL_LOCALIDADES</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>LOCALIDADES_TABLE_EXIST</from>
+      <to>LOCALIDADES_TABLE_CREATION</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>LOCALIDADES_TABLE_CREATION</from>
+      <to>ETL_LOCALIDADES</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>ETL_CANALES</from>
+      <to>SEGMENTOS_TABLE_EXIST</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>SEGMENTOS_TABLE_EXIST</from>
+      <to>ETL_SEGMENTOS</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>SEGMENTOS_TABLE_EXIST</from>
+      <to>SEGMENTOS_TABLE_CREATION</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>SEGMENTOS_TABLE_CREATION</from>
+      <to>ETL_SEGMENTOS</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
