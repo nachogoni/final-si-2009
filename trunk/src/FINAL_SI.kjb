@@ -105,8 +105,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>39</xloc>
-      <yloc>199</yloc>
+      <xloc>46</xloc>
+      <yloc>264</yloc>
       </entry>
     <entry>
       <name>ETL_PRODUCTOR</name>
@@ -386,20 +386,6 @@
   CANAL_ID
 )
 ;
-
-CREATE TABLE LU_SEGMENTO
-(
-  SEGMENTO_ID INTEGER
-, CANAL_ID TEXT(255)
-, SEGMENTO_NOMBRE LONG
-)
-;CREATE INDEX idx_LU_SEGMENTO_lookup
- ON LU_SEGMENTO
-( 
-  SEGMENTO_ID
-)
-;
-
 </sql>
       <useVariableSubstitution>F</useVariableSubstitution>
       <sqlfromfile>F</sqlfromfile>
@@ -496,7 +482,7 @@ CREATE TABLE LU_SEGMENTO
       <name>SEGMENTOS_TABLE_EXIST</name>
       <description>Table exists</description>
       <type>TABLE_EXISTS</type>
-      <tablename>LU_SEGMENTOS</tablename>
+      <tablename>LU_SEGMENTO</tablename>
       <schemaname/>
       <connection>olap</connection>
       <parallel>N</parallel>
