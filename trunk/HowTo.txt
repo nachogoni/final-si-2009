@@ -1,7 +1,7 @@
 Pasos para empezar a trabajar:
 
 ::Setup::
-En la carpeta src estan las dos bases de datos iniciales, oltp.mdb y olap.mdb, hacer una copia donde querramos (hay una carpeta working_copy pasa eso si queres). La oltp se corresponde con la base que nos dan ellos (no commiteada porque pesa infinito).
+En la carpeta src estan las dos bases de datos iniciales, oltp.mdb y olap.mdb, hacer una copia donde querramos (hay una carpeta working_copy para eso si queres). La oltp se corresponde con la base que nos dan ellos (no commiteada porque pesa infinito).
 Crear los dns de sistema hacia la copia de ambas bases de datos con oltp y olap como dns.
 Abrir el Pentaho Data Integration y elegir No repository.
 
