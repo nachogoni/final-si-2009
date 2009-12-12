@@ -231,7 +231,7 @@
     </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
       <xloc>359</xloc>
-      <yloc>112</yloc>
+      <yloc>111</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
