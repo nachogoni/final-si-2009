@@ -520,15 +520,14 @@
       <yloc>353</yloc>
       </entry>
     <entry>
-      <name>CREATE_DATE_TABLE</name>
+      <name>LU_TRIMESTRE_CREATION</name>
       <description>SQL</description>
       <type>SQL</type>
-      <sql>CREATE TABLE LU_DATE
+      <sql>CREATE TABLE LU_TRIMESTRE
 (
-  DATE_ID DOUBLE
+  TRIMESTRE_ID INTEGER
+, TRIMESTRE INTEGER
 , YEAR_ID INTEGER
-, MONTH_ID INTEGER
-, DAY_ID INTEGER
 )
 ;</sql>
       <useVariableSubstitution>F</useVariableSubstitution>
@@ -538,14 +537,143 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>350</xloc>
-      <yloc>521</yloc>
+      <xloc>357</xloc>
+      <yloc>513</yloc>
       </entry>
     <entry>
-      <name>CREATE_DATES</name>
+      <name>CREATE_TRIMESTRE</name>
       <description>Transformation</description>
       <type>TRANS</type>
-      <filename>${Internal.Job.Filename.Directory}&#47;CREATE_DATE.ktr</filename>
+      <filename>${Internal.Job.Filename.Directory}&#47;CREATE_TRIMESTRE.ktr</filename>
+      <transname/>
+      <directory/>
+      <arg_from_previous>N</arg_from_previous>
+      <params_from_previous>N</params_from_previous>
+      <exec_per_row>N</exec_per_row>
+      <clear_rows>N</clear_rows>
+      <clear_files>N</clear_files>
+      <set_logfile>N</set_logfile>
+      <logfile/>
+      <logext/>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <loglevel>Nothing</loglevel>
+      <cluster>N</cluster>
+      <slave_server_name/>
+      <set_append_logfile>N</set_append_logfile>
+      <wait_until_finished>Y</wait_until_finished>
+      <follow_abort_remote>N</follow_abort_remote>
+      <parameters>        <pass_all_parameters>Y</pass_all_parameters>
+      </parameters>      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>502</xloc>
+      <yloc>513</yloc>
+      </entry>
+    <entry>
+      <name>LU_TRIMESTRE_TABLE_EXIST</name>
+      <description>Table exists</description>
+      <type>TABLE_EXISTS</type>
+      <tablename>LU_TRIMESTRE</tablename>
+      <schemaname/>
+      <connection>olap</connection>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>273</xloc>
+      <yloc>599</yloc>
+      </entry>
+    <entry>
+      <name>LU_MES_CREATION</name>
+      <description>SQL</description>
+      <type>SQL</type>
+      <sql>CREATE TABLE LU_MES
+(
+  MES_ID INTEGER
+, TRIMESTRE_ID LONG
+, MES_NUM INTEGER
+, MES_STR TEXT
+)
+;</sql>
+      <useVariableSubstitution>F</useVariableSubstitution>
+      <sqlfromfile>F</sqlfromfile>
+      <sqlfilename/>
+      <connection>olap</connection>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>642</xloc>
+      <yloc>512</yloc>
+      </entry>
+    <entry>
+      <name>CREATE_MES</name>
+      <description>Transformation</description>
+      <type>TRANS</type>
+      <filename>${Internal.Job.Filename.Directory}&#47;CREATE_MES.ktr</filename>
+      <transname/>
+      <directory/>
+      <arg_from_previous>N</arg_from_previous>
+      <params_from_previous>N</params_from_previous>
+      <exec_per_row>N</exec_per_row>
+      <clear_rows>N</clear_rows>
+      <clear_files>N</clear_files>
+      <set_logfile>N</set_logfile>
+      <logfile/>
+      <logext/>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <loglevel>Nothing</loglevel>
+      <cluster>N</cluster>
+      <slave_server_name/>
+      <set_append_logfile>N</set_append_logfile>
+      <wait_until_finished>Y</wait_until_finished>
+      <follow_abort_remote>N</follow_abort_remote>
+      <parameters>        <pass_all_parameters>Y</pass_all_parameters>
+      </parameters>      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>757</xloc>
+      <yloc>512</yloc>
+      </entry>
+    <entry>
+      <name>LU_MES_TABLE_EXIST</name>
+      <description>Table exists</description>
+      <type>TABLE_EXISTS</type>
+      <tablename>LU_MES</tablename>
+      <schemaname/>
+      <connection>olap</connection>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>572</xloc>
+      <yloc>599</yloc>
+      </entry>
+    <entry>
+      <name>LU_TRIMESTRE_CREATION 2 2</name>
+      <description>SQL</description>
+      <type>SQL</type>
+      <sql>CREATE TABLE LU_TRIMESTRE
+(
+  TRIMESTRE_ID INTEGER
+, TRIMESTRE INTEGER
+, YEAR_ID INTEGER
+)
+;</sql>
+      <useVariableSubstitution>F</useVariableSubstitution>
+      <sqlfromfile>F</sqlfromfile>
+      <sqlfilename/>
+      <connection>olap</connection>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>935</xloc>
+      <yloc>509</yloc>
+      </entry>
+    <entry>
+      <name>CREATE_TRIMESTRE 2 2</name>
+      <description>Transformation</description>
+      <type>TRANS</type>
+      <filename>${Internal.Job.Filename.Directory}&#47;CREATE_TRIMESTRE.ktr</filename>
       <transname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
@@ -567,21 +695,21 @@
       </parameters>      <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>459</xloc>
-      <yloc>592</yloc>
+      <xloc>1097</xloc>
+      <yloc>510</yloc>
       </entry>
     <entry>
-      <name>DATES_TABLE_EXIST</name>
+      <name>LU_TRIMESTRE_TABLE_EXIST 2 2</name>
       <description>Table exists</description>
       <type>TABLE_EXISTS</type>
-      <tablename>LU_DATE</tablename>
+      <tablename>LU_TRIMESTRE</tablename>
       <schemaname/>
       <connection>olap</connection>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>236</xloc>
-      <yloc>592</yloc>
+      <xloc>843</xloc>
+      <yloc>599</yloc>
       </entry>
   </entries>
   <hops>
@@ -802,17 +930,8 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>DATES_TABLE_EXIST</from>
-      <to>CREATE_DATES</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>DATES_TABLE_EXIST</from>
-      <to>CREATE_DATE_TABLE</to>
+      <from>LU_TRIMESTRE_TABLE_EXIST</from>
+      <to>LU_TRIMESTRE_CREATION</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -821,7 +940,7 @@
     </hop>
     <hop>
       <from>START</from>
-      <to>DATES_TABLE_EXIST</to>
+      <to>LU_TRIMESTRE_TABLE_EXIST</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -829,8 +948,80 @@
       <unconditional>Y</unconditional>
     </hop>
     <hop>
-      <from>CREATE_DATE_TABLE</from>
-      <to>CREATE_DATES</to>
+      <from>LU_TRIMESTRE_CREATION</from>
+      <to>CREATE_TRIMESTRE</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>LU_TRIMESTRE_TABLE_EXIST</from>
+      <to>LU_MES_TABLE_EXIST</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>CREATE_TRIMESTRE</from>
+      <to>LU_MES_TABLE_EXIST</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>LU_MES_TABLE_EXIST</from>
+      <to>LU_TRIMESTRE_TABLE_EXIST 2 2</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>LU_MES_TABLE_EXIST</from>
+      <to>LU_MES_CREATION</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>LU_MES_CREATION</from>
+      <to>CREATE_MES</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>CREATE_MES</from>
+      <to>LU_TRIMESTRE_TABLE_EXIST 2 2</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>LU_TRIMESTRE_TABLE_EXIST 2 2</from>
+      <to>LU_TRIMESTRE_CREATION 2 2</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>LU_TRIMESTRE_CREATION 2 2</from>
+      <to>CREATE_TRIMESTRE 2 2</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
