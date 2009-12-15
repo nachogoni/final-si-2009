@@ -546,7 +546,6 @@
       <type>TRANS</type>
       <filename>${Internal.Job.Filename.Directory}&#47;CREATE_TRIMESTRE.ktr</filename>
       <transname/>
-      <directory/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
       <exec_per_row>N</exec_per_row>
@@ -584,15 +583,15 @@
       <yloc>599</yloc>
       </entry>
     <entry>
-      <name>LU_MES_CREATION</name>
+      <name>LU_MONTH_CREATION</name>
       <description>SQL</description>
       <type>SQL</type>
-      <sql>CREATE TABLE LU_MES
+      <sql>CREATE TABLE LU_MONTH
 (
-  MES_ID INTEGER
+  MONTH_ID INTEGER
 , TRIMESTRE_ID LONG
-, MES_NUM INTEGER
-, MES_STR TEXT
+, MONTH_NUM INTEGER
+, MONTH_STR TEXT
 )
 ;</sql>
       <useVariableSubstitution>F</useVariableSubstitution>
@@ -606,7 +605,7 @@
       <yloc>512</yloc>
       </entry>
     <entry>
-      <name>CREATE_MES</name>
+      <name>CREATE_MONTH</name>
       <description>Transformation</description>
       <type>TRANS</type>
       <filename>${Internal.Job.Filename.Directory}&#47;CREATE_MES.ktr</filename>
@@ -632,14 +631,14 @@
       </parameters>      <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>757</xloc>
+      <xloc>758</xloc>
       <yloc>512</yloc>
       </entry>
     <entry>
-      <name>LU_MES_TABLE_EXIST</name>
+      <name>LU_MONTH_TABLE_EXIST</name>
       <description>Table exists</description>
       <type>TABLE_EXISTS</type>
-      <tablename>LU_MES</tablename>
+      <tablename>LU_MONTH</tablename>
       <schemaname/>
       <connection>olap</connection>
       <parallel>N</parallel>
@@ -649,14 +648,15 @@
       <yloc>599</yloc>
       </entry>
     <entry>
-      <name>LU_TRIMESTRE_CREATION 2 2</name>
+      <name>LU_DATE_CREATION</name>
       <description>SQL</description>
       <type>SQL</type>
-      <sql>CREATE TABLE LU_TRIMESTRE
+      <sql>CREATE TABLE LU_DATE
 (
-  TRIMESTRE_ID INTEGER
-, TRIMESTRE INTEGER
-, YEAR_ID INTEGER
+  DAY_ID LONG
+, MONTH_ID LONG
+, DAY_NUM INTEGER
+, DAY_DATE DATETIME
 )
 ;</sql>
       <useVariableSubstitution>F</useVariableSubstitution>
@@ -670,11 +670,12 @@
       <yloc>509</yloc>
       </entry>
     <entry>
-      <name>CREATE_TRIMESTRE 2 2</name>
+      <name>CREATE_DATE</name>
       <description>Transformation</description>
       <type>TRANS</type>
-      <filename>${Internal.Job.Filename.Directory}&#47;CREATE_TRIMESTRE.ktr</filename>
+      <filename>${Internal.Job.Filename.Directory}&#47;CREATE_DIA.ktr</filename>
       <transname/>
+      <directory/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
       <exec_per_row>N</exec_per_row>
@@ -695,14 +696,14 @@
       </parameters>      <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>1097</xloc>
-      <yloc>510</yloc>
+      <xloc>1082</xloc>
+      <yloc>509</yloc>
       </entry>
     <entry>
-      <name>LU_TRIMESTRE_TABLE_EXIST 2 2</name>
+      <name>LU_DATE_TABLE_EXIST</name>
       <description>Table exists</description>
       <type>TABLE_EXISTS</type>
-      <tablename>LU_TRIMESTRE</tablename>
+      <tablename>LU_DATE</tablename>
       <schemaname/>
       <connection>olap</connection>
       <parallel>N</parallel>
@@ -958,7 +959,7 @@
     </hop>
     <hop>
       <from>LU_TRIMESTRE_TABLE_EXIST</from>
-      <to>LU_MES_TABLE_EXIST</to>
+      <to>LU_MONTH_TABLE_EXIST</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -967,7 +968,7 @@
     </hop>
     <hop>
       <from>CREATE_TRIMESTRE</from>
-      <to>LU_MES_TABLE_EXIST</to>
+      <to>LU_MONTH_TABLE_EXIST</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -975,8 +976,8 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>LU_MES_TABLE_EXIST</from>
-      <to>LU_TRIMESTRE_TABLE_EXIST 2 2</to>
+      <from>LU_MONTH_TABLE_EXIST</from>
+      <to>LU_DATE_TABLE_EXIST</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -984,8 +985,8 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>LU_MES_TABLE_EXIST</from>
-      <to>LU_MES_CREATION</to>
+      <from>LU_MONTH_TABLE_EXIST</from>
+      <to>LU_MONTH_CREATION</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -993,8 +994,8 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>LU_MES_CREATION</from>
-      <to>CREATE_MES</to>
+      <from>LU_MONTH_CREATION</from>
+      <to>CREATE_MONTH</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -1002,8 +1003,8 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>CREATE_MES</from>
-      <to>LU_TRIMESTRE_TABLE_EXIST 2 2</to>
+      <from>CREATE_MONTH</from>
+      <to>LU_DATE_TABLE_EXIST</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -1011,8 +1012,8 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>LU_TRIMESTRE_TABLE_EXIST 2 2</from>
-      <to>LU_TRIMESTRE_CREATION 2 2</to>
+      <from>LU_DATE_TABLE_EXIST</from>
+      <to>LU_DATE_CREATION</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -1020,8 +1021,8 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>LU_TRIMESTRE_CREATION 2 2</from>
-      <to>CREATE_TRIMESTRE 2 2</to>
+      <from>LU_DATE_CREATION</from>
+      <to>CREATE_DATE</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
