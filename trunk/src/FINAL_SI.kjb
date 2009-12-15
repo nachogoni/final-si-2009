@@ -134,7 +134,7 @@
       </parameters>      <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>438</xloc>
+      <xloc>474</xloc>
       <yloc>114</yloc>
       </entry>
     <entry>
@@ -163,8 +163,8 @@
       </parameters>      <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>742</xloc>
-      <yloc>112</yloc>
+      <xloc>760</xloc>
+      <yloc>114</yloc>
       </entry>
     <entry>
       <name>PRODUCTOR_TABLE_CREATION</name>
@@ -188,8 +188,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>400</xloc>
-      <yloc>22</yloc>
+      <xloc>408</xloc>
+      <yloc>24</yloc>
       </entry>
     <entry>
       <name>ETL_PROVINCIAS</name>
@@ -217,8 +217,8 @@
       </parameters>      <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>439</xloc>
-      <yloc>279</yloc>
+      <xloc>469</xloc>
+      <yloc>267</yloc>
       </entry>
     <entry>
       <name>PRODUCTOR_TABLE_EXIST</name>
@@ -230,7 +230,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>308</xloc>
+      <xloc>325</xloc>
       <yloc>113</yloc>
       </entry>
     <entry>
@@ -259,8 +259,8 @@
       </parameters>      <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>770</xloc>
-      <yloc>278</yloc>
+      <xloc>787</xloc>
+      <yloc>267</yloc>
       </entry>
     <entry>
       <name>ETL_SEGMENTOS</name>
@@ -288,8 +288,8 @@
       </parameters>      <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>798</xloc>
-      <yloc>447</yloc>
+      <xloc>802</xloc>
+      <yloc>431</yloc>
       </entry>
     <entry>
       <name>ETL_CANALES</name>
@@ -317,8 +317,8 @@
       </parameters>      <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>447</xloc>
-      <yloc>449</yloc>
+      <xloc>477</xloc>
+      <yloc>431</yloc>
       </entry>
     <entry>
       <name>PROVINCIA_TABLE_EXIST</name>
@@ -330,7 +330,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>291</xloc>
+      <xloc>308</xloc>
       <yloc>267</yloc>
       </entry>
     <entry>
@@ -343,8 +343,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>249</xloc>
-      <yloc>438</yloc>
+      <xloc>316</xloc>
+      <yloc>431</yloc>
       </entry>
     <entry>
       <name>PROVINCIA_TABLE_CREATION</name>
@@ -368,8 +368,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>394</xloc>
-      <yloc>192</yloc>
+      <xloc>403</xloc>
+      <yloc>189</yloc>
       </entry>
     <entry>
       <name>CANAL_TABLE_CREATION</name>
@@ -394,8 +394,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>374</xloc>
-      <yloc>364</yloc>
+      <xloc>403</xloc>
+      <yloc>356</yloc>
       </entry>
     <entry>
       <name>AGENTES_TABLE_CREATION</name>
@@ -422,8 +422,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>645</xloc>
-      <yloc>12</yloc>
+      <xloc>675</xloc>
+      <yloc>22</yloc>
       </entry>
     <entry>
       <name>AGENTES_TABLE_EXIST</name>
@@ -435,8 +435,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>586</xloc>
-      <yloc>106</yloc>
+      <xloc>601</xloc>
+      <yloc>114</yloc>
       </entry>
     <entry>
       <name>LOCALIDADES_TABLE_EXIST</name>
@@ -448,8 +448,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>596</xloc>
-      <yloc>276</yloc>
+      <xloc>621</xloc>
+      <yloc>267</yloc>
       </entry>
     <entry>
       <name>LOCALIDADES_TABLE_CREATION</name>
@@ -475,8 +475,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>674</xloc>
-      <yloc>201</yloc>
+      <xloc>700</xloc>
+      <yloc>193</yloc>
       </entry>
     <entry>
       <name>SEGMENTOS_TABLE_EXIST</name>
@@ -488,8 +488,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>588</xloc>
-      <yloc>443</yloc>
+      <xloc>621</xloc>
+      <yloc>431</yloc>
       </entry>
     <entry>
       <name>SEGMENTOS_TABLE_CREATION</name>
@@ -516,8 +516,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>678</xloc>
-      <yloc>353</yloc>
+      <xloc>708</xloc>
+      <yloc>346</yloc>
       </entry>
     <entry>
       <name>LU_TRIMESTRE_CREATION</name>
@@ -579,7 +579,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>273</xloc>
+      <xloc>300</xloc>
       <yloc>599</yloc>
       </entry>
     <entry>
@@ -601,8 +601,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>642</xloc>
-      <yloc>512</yloc>
+      <xloc>656</xloc>
+      <yloc>513</yloc>
       </entry>
     <entry>
       <name>CREATE_MONTH</name>
@@ -610,7 +610,6 @@
       <type>TRANS</type>
       <filename>${Internal.Job.Filename.Directory}&#47;CREATE_MES.ktr</filename>
       <transname/>
-      <directory/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
       <exec_per_row>N</exec_per_row>
@@ -631,8 +630,8 @@
       </parameters>      <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>758</xloc>
-      <yloc>512</yloc>
+      <xloc>772</xloc>
+      <yloc>513</yloc>
       </entry>
     <entry>
       <name>LU_MONTH_TABLE_EXIST</name>
@@ -644,7 +643,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>572</xloc>
+      <xloc>563</xloc>
       <yloc>599</yloc>
       </entry>
     <entry>
@@ -666,8 +665,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>935</xloc>
-      <yloc>509</yloc>
+      <xloc>922</xloc>
+      <yloc>514</yloc>
       </entry>
     <entry>
       <name>CREATE_DATE</name>
@@ -675,7 +674,6 @@
       <type>TRANS</type>
       <filename>${Internal.Job.Filename.Directory}&#47;CREATE_DIA.ktr</filename>
       <transname/>
-      <directory/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
       <exec_per_row>N</exec_per_row>
@@ -696,8 +694,8 @@
       </parameters>      <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>1082</xloc>
-      <yloc>509</yloc>
+      <xloc>1069</xloc>
+      <yloc>514</yloc>
       </entry>
     <entry>
       <name>LU_DATE_TABLE_EXIST</name>
