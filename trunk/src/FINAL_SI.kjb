@@ -105,8 +105,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>46</xloc>
-      <yloc>264</yloc>
+      <xloc>129</xloc>
+      <yloc>344</yloc>
       </entry>
     <entry>
       <name>ETL_PRODUCTOR</name>
@@ -529,6 +529,11 @@
 , TRIMESTRE INTEGER
 , YEAR_ID INTEGER
 )
+;CREATE INDEX idx_LU_TRIMESTRE_lookup
+ ON LU_TRIMESTRE
+( 
+  TRIMESTRE_ID
+)
 ;</sql>
       <useVariableSubstitution>F</useVariableSubstitution>
       <sqlfromfile>F</sqlfromfile>
@@ -593,6 +598,11 @@
 , MONTH_NUM INTEGER
 , MONTH_STR TEXT
 )
+;CREATE INDEX idx_LU_MONTH_lookup
+ ON LU_MONTH
+( 
+  MONTH_ID
+)
 ;</sql>
       <useVariableSubstitution>F</useVariableSubstitution>
       <sqlfromfile>F</sqlfromfile>
@@ -656,6 +666,11 @@
 , MONTH_ID LONG
 , DAY_NUM INTEGER
 , DAY_DATE DATETIME
+)
+;CREATE INDEX idx_LU_DATE_lookup
+ ON LU_DATE
+( 
+  DAY_ID
 )
 ;</sql>
       <useVariableSubstitution>F</useVariableSubstitution>
