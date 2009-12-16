@@ -105,8 +105,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>129</xloc>
-      <yloc>344</yloc>
+      <xloc>64</xloc>
+      <yloc>471</yloc>
       </entry>
     <entry>
       <name>ETL_PRODUCTOR</name>
@@ -138,11 +138,12 @@
       <yloc>114</yloc>
       </entry>
     <entry>
-      <name>ETL_AGENTES</name>
+      <name>ETL_AGENTE</name>
       <description>Transformation</description>
       <type>TRANS</type>
       <filename>${Internal.Job.Filename.Directory}&#47;ETL_AGENTE.ktr</filename>
       <transname/>
+      <directory/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
       <exec_per_row>N</exec_per_row>
@@ -398,7 +399,7 @@
       <yloc>356</yloc>
       </entry>
     <entry>
-      <name>AGENTES_TABLE_CREATION</name>
+      <name>AGENTE_TABLE_CREATION</name>
       <description>SQL</description>
       <type>SQL</type>
       <sql>CREATE TABLE LU_AGENTE
@@ -426,10 +427,10 @@
       <yloc>22</yloc>
       </entry>
     <entry>
-      <name>AGENTES_TABLE_EXIST</name>
+      <name>AGENTE_TABLE_EXIST</name>
       <description>Table exists</description>
       <type>TABLE_EXISTS</type>
-      <tablename>LU_AGENTES</tablename>
+      <tablename>LU_AGENTE</tablename>
       <schemaname/>
       <connection>olap</connection>
       <parallel>N</parallel>
@@ -725,6 +726,215 @@
       <xloc>843</xloc>
       <yloc>599</yloc>
       </entry>
+    <entry>
+      <name>ETL_VEHICULO</name>
+      <description>Transformation</description>
+      <type>TRANS</type>
+      <filename>${Internal.Job.Filename.Directory}&#47;ETL_VEHICULO.ktr</filename>
+      <transname/>
+      <directory/>
+      <arg_from_previous>N</arg_from_previous>
+      <params_from_previous>N</params_from_previous>
+      <exec_per_row>N</exec_per_row>
+      <clear_rows>N</clear_rows>
+      <clear_files>N</clear_files>
+      <set_logfile>N</set_logfile>
+      <logfile/>
+      <logext/>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <loglevel>Nothing</loglevel>
+      <cluster>N</cluster>
+      <slave_server_name/>
+      <set_append_logfile>N</set_append_logfile>
+      <wait_until_finished>Y</wait_until_finished>
+      <follow_abort_remote>N</follow_abort_remote>
+      <parameters>        <pass_all_parameters>Y</pass_all_parameters>
+      </parameters>      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>1092</xloc>
+      <yloc>767</yloc>
+      </entry>
+    <entry>
+      <name>ETL_MODELO</name>
+      <description>Transformation</description>
+      <type>TRANS</type>
+      <filename>${Internal.Job.Filename.Directory}&#47;ETL_MODELO.ktr</filename>
+      <transname/>
+      <arg_from_previous>N</arg_from_previous>
+      <params_from_previous>N</params_from_previous>
+      <exec_per_row>N</exec_per_row>
+      <clear_rows>N</clear_rows>
+      <clear_files>N</clear_files>
+      <set_logfile>N</set_logfile>
+      <logfile/>
+      <logext/>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <loglevel>Nothing</loglevel>
+      <cluster>N</cluster>
+      <slave_server_name/>
+      <set_append_logfile>N</set_append_logfile>
+      <wait_until_finished>Y</wait_until_finished>
+      <follow_abort_remote>N</follow_abort_remote>
+      <parameters>        <pass_all_parameters>Y</pass_all_parameters>
+      </parameters>      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>501</xloc>
+      <yloc>768</yloc>
+      </entry>
+    <entry>
+      <name>MODELO_TABLE_EXIST</name>
+      <description>Table exists</description>
+      <type>TABLE_EXISTS</type>
+      <tablename>LU_MODELO</tablename>
+      <schemaname/>
+      <connection>olap</connection>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>340</xloc>
+      <yloc>768</yloc>
+      </entry>
+    <entry>
+      <name>MODELO_TABLE_CREATION</name>
+      <description>SQL</description>
+      <type>SQL</type>
+      <sql>CREATE TABLE LU_MODELO
+(
+  MODELO_ID TEXT
+, MARCA TEXT(255)
+, MODELO TEXT
+)
+;CREATE INDEX idx_LU_MODELO_lookup
+ ON LU_MODELO
+( 
+  MODELO_ID
+)
+;
+</sql>
+      <useVariableSubstitution>F</useVariableSubstitution>
+      <sqlfromfile>F</sqlfromfile>
+      <sqlfilename/>
+      <connection>olap</connection>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>427</xloc>
+      <yloc>693</yloc>
+      </entry>
+    <entry>
+      <name>VEHICULO_TABLE_EXIST</name>
+      <description>Table exists</description>
+      <type>TABLE_EXISTS</type>
+      <tablename>LU_VEHICULO</tablename>
+      <schemaname/>
+      <connection>olap</connection>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>911</xloc>
+      <yloc>767</yloc>
+      </entry>
+    <entry>
+      <name>VEHICULO_TABLE_CREATION</name>
+      <description>SQL</description>
+      <type>SQL</type>
+      <sql>CREATE TABLE LU_VEHICULO
+(
+  VEHICULO_ID TEXT
+, YEAR_ID INTEGER
+, MODELO_ID TEXT
+, TIPO_ID INTEGER
+)
+;CREATE INDEX idx_LU_VEHICULO_lookup
+ ON LU_VEHICULO
+( 
+  VEHICULO_ID
+)
+;
+</sql>
+      <useVariableSubstitution>F</useVariableSubstitution>
+      <sqlfromfile>F</sqlfromfile>
+      <sqlfilename/>
+      <connection>olap</connection>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>998</xloc>
+      <yloc>682</yloc>
+      </entry>
+    <entry>
+      <name>ETL_TIPO</name>
+      <description>Transformation</description>
+      <type>TRANS</type>
+      <filename>${Internal.Job.Filename.Directory}&#47;ETL_TIPO_VEHICULO.ktr</filename>
+      <transname/>
+      <directory/>
+      <arg_from_previous>N</arg_from_previous>
+      <params_from_previous>N</params_from_previous>
+      <exec_per_row>N</exec_per_row>
+      <clear_rows>N</clear_rows>
+      <clear_files>N</clear_files>
+      <set_logfile>N</set_logfile>
+      <logfile/>
+      <logext/>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <loglevel>Nothing</loglevel>
+      <cluster>N</cluster>
+      <slave_server_name/>
+      <set_append_logfile>N</set_append_logfile>
+      <wait_until_finished>Y</wait_until_finished>
+      <follow_abort_remote>N</follow_abort_remote>
+      <parameters>        <pass_all_parameters>Y</pass_all_parameters>
+      </parameters>      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>784</xloc>
+      <yloc>767</yloc>
+      </entry>
+    <entry>
+      <name>TIPO_TABLE_EXIST</name>
+      <description>Table exists</description>
+      <type>TABLE_EXISTS</type>
+      <tablename>LU_TIPO</tablename>
+      <schemaname/>
+      <connection>olap</connection>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>623</xloc>
+      <yloc>767</yloc>
+      </entry>
+    <entry>
+      <name>TIPO_TABLE_CREATION</name>
+      <description>SQL</description>
+      <type>SQL</type>
+      <sql>CREATE TABLE LU_TIPO
+(
+  TIPO_ID INTEGER
+, TIPO TEXT(255)
+)
+;CREATE INDEX idx_LU_TIPO_lookup
+ ON LU_TIPO
+( 
+  TIPO_ID
+)
+;
+</sql>
+      <useVariableSubstitution>F</useVariableSubstitution>
+      <sqlfromfile>F</sqlfromfile>
+      <sqlfilename/>
+      <connection>olap</connection>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>710</xloc>
+      <yloc>692</yloc>
+      </entry>
   </entries>
   <hops>
     <hop>
@@ -735,15 +945,6 @@
       <enabled>Y</enabled>
       <evaluation>Y</evaluation>
       <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>START</from>
-      <to>PRODUCTOR_TABLE_EXIST</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>Y</unconditional>
     </hop>
     <hop>
       <from>PRODUCTOR_TABLE_EXIST</from>
@@ -762,24 +963,6 @@
       <enabled>Y</enabled>
       <evaluation>N</evaluation>
       <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>START</from>
-      <to>PROVINCIA_TABLE_EXIST</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>Y</unconditional>
-    </hop>
-    <hop>
-      <from>START</from>
-      <to>CANAL_TABLE_EXIST</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>Y</unconditional>
     </hop>
     <hop>
       <from>PROVINCIA_TABLE_EXIST</from>
@@ -837,7 +1020,7 @@
     </hop>
     <hop>
       <from>ETL_PRODUCTOR</from>
-      <to>AGENTES_TABLE_EXIST</to>
+      <to>AGENTE_TABLE_EXIST</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -845,8 +1028,8 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>AGENTES_TABLE_EXIST</from>
-      <to>ETL_AGENTES</to>
+      <from>AGENTE_TABLE_EXIST</from>
+      <to>ETL_AGENTE</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -854,8 +1037,8 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>AGENTES_TABLE_EXIST</from>
-      <to>AGENTES_TABLE_CREATION</to>
+      <from>AGENTE_TABLE_EXIST</from>
+      <to>AGENTE_TABLE_CREATION</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -863,8 +1046,8 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>AGENTES_TABLE_CREATION</from>
-      <to>ETL_AGENTES</to>
+      <from>AGENTE_TABLE_CREATION</from>
+      <to>ETL_AGENTE</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -953,15 +1136,6 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>START</from>
-      <to>LU_TRIMESTRE_TABLE_EXIST</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>Y</unconditional>
-    </hop>
-    <hop>
       <from>LU_TRIMESTRE_CREATION</from>
       <to>CREATE_TRIMESTRE</to>
       <from_nr>0</from_nr>
@@ -1041,6 +1215,150 @@
       <enabled>Y</enabled>
       <evaluation>Y</evaluation>
       <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>MODELO_TABLE_EXIST</from>
+      <to>ETL_MODELO</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>MODELO_TABLE_EXIST</from>
+      <to>MODELO_TABLE_CREATION</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>MODELO_TABLE_CREATION</from>
+      <to>ETL_MODELO</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>VEHICULO_TABLE_EXIST</from>
+      <to>ETL_VEHICULO</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>VEHICULO_TABLE_EXIST</from>
+      <to>VEHICULO_TABLE_CREATION</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>VEHICULO_TABLE_CREATION</from>
+      <to>ETL_VEHICULO</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>START</from>
+      <to>MODELO_TABLE_EXIST</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>TIPO_TABLE_EXIST</from>
+      <to>ETL_TIPO</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>TIPO_TABLE_EXIST</from>
+      <to>TIPO_TABLE_CREATION</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>TIPO_TABLE_CREATION</from>
+      <to>ETL_TIPO</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>ETL_MODELO</from>
+      <to>TIPO_TABLE_EXIST</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>ETL_TIPO</from>
+      <to>VEHICULO_TABLE_EXIST</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>START</from>
+      <to>LU_TRIMESTRE_TABLE_EXIST</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>START</from>
+      <to>CANAL_TABLE_EXIST</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>START</from>
+      <to>PROVINCIA_TABLE_EXIST</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>START</from>
+      <to>PRODUCTOR_TABLE_EXIST</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
     </hop>
   </hops>
   <notepads>
