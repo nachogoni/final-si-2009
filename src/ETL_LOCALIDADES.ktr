@@ -175,12 +175,6 @@
         <condition>=</condition>
         <name2/>
       </key>
-      <key>
-        <name>PROVINCIA_ID</name>
-        <field>PROVINCIA_ID</field>
-        <condition>=</condition>
-        <name2/>
-      </key>
       <value>
         <name>LOCALIDAD_ID</name>
         <rename>LOCALIDAD_ID</rename>
@@ -189,7 +183,7 @@
       <value>
         <name>PROVINCIA_ID</name>
         <rename>PROVINCIA_ID</rename>
-        <update>N</update>
+        <update>Y</update>
       </value>
       <value>
         <name>LOCALIDAD_NOMBRE</name>
@@ -215,16 +209,16 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
-    <fields>      <field>        <name>LOC</name>
+    <fields>      <field>        <name>id</name>
         <rename>LOCALIDAD_ID</rename>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>PRV</name>
-        <rename>PROVINCIA_ID</rename>
         <length>-2</length>
         <precision>-2</precision>
       </field>      <field>        <name>LOCALIDAD</name>
         <rename>LOCALIDAD_NOMBRE</rename>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>PRV</name>
+        <rename>PROVINCIA_ID</rename>
         <length>-2</length>
         <precision>-2</precision>
       </field>        <select_unspecified>N</select_unspecified>
@@ -310,7 +304,7 @@
            </partitioning>
     <connection>oltp</connection>
     <sql>SELECT
-  Localidades.LOC
+  Localidades.LOC *100 + Localidades.PRV as id
 , Localidades.PRV
 , Localidades.LOCALIDAD
 FROM Localidades, Provincias
