@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <transformation>
   <info>
-    <name>ETL_FLOTA</name>
+    <name>ETL_CLIENTE</name>
     <description/>
     <extended_description/>
     <trans_version/>
-    <trans_status>0</trans_status>
     <directory>&#47;</directory>
     <parameters>
     </parameters>
@@ -49,7 +48,7 @@
     <clusterschemas>
     </clusterschemas>
   <modified_user>-</modified_user>
-  <modified_date>2009&#47;12&#47;16 13:48:18.798</modified_date>
+  <modified_date>2009&#47;12&#47;16 15:45:00.202</modified_date>
   </info>
   <notepads>
   </notepads>
@@ -111,15 +110,14 @@
            </partitioning>
     <connection>oltp</connection>
     <sql>SELECT
-  DISTINCT POLIZA
-, REF
-, UEN
-, Segmento_ID
-, OFI
-, SOC
-, FECPRIEMIS
-FROM [Items Asegurados]
-
+  POLIZA as clientid
+, POLIZA
+, LOC *100 + PRV as localidadid
+, CPOSTAL
+, EDAD
+, SEXO
+, ESTCIV
+FROM Clientes
 </sql>
     <limit>0</limit>
     <lookup/>
@@ -128,8 +126,8 @@ FROM [Items Asegurados]
     <lazy_conversion_active>N</lazy_conversion_active>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>128</xloc>
-      <yloc>218</yloc>
+      <xloc>123</xloc>
+      <yloc>219</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -148,35 +146,35 @@ FROM [Items Asegurados]
         <rename>FLOTA_ID</rename>
         <length>-2</length>
         <precision>-2</precision>
-      </field>      <field>        <name>REF</name>
-        <rename>FLOTA_REF</rename>
+      </field>      <field>        <name>CPOSTAL</name>
+        <rename>CLIENTE_CP</rename>
         <length>-2</length>
         <precision>-2</precision>
-      </field>      <field>        <name>UEN</name>
-        <rename>FLOTA_UEN</rename>
+      </field>      <field>        <name>EDAD</name>
+        <rename>CLIENTE_EDAD</rename>
         <length>-2</length>
         <precision>-2</precision>
-      </field>      <field>        <name>Segmento_ID</name>
-        <rename>SEGMENTO_ID</rename>
+      </field>      <field>        <name>SEXO</name>
+        <rename>CLIENTE_SEXO</rename>
         <length>-2</length>
         <precision>-2</precision>
-      </field>      <field>        <name>OFI</name>
-        <rename>FLOTA_OFI</rename>
+      </field>      <field>        <name>ESTCIV</name>
+        <rename>CLIENTE_ESTCIVIL</rename>
         <length>-2</length>
         <precision>-2</precision>
-      </field>      <field>        <name>SOC</name>
-        <rename>AGENTE_ID</rename>
+      </field>      <field>        <name>clientid</name>
+        <rename>CLIENTE_ID</rename>
         <length>-2</length>
         <precision>-2</precision>
-      </field>      <field>        <name>FECPRIEMIS</name>
-        <rename>DAY_ID</rename>
+      </field>      <field>        <name>localidadid</name>
+        <rename>LOCALIDAD_ID</rename>
         <length>-2</length>
         <precision>-2</precision>
       </field>        <select_unspecified>N</select_unspecified>
     </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>294</xloc>
-      <yloc>219</yloc>
+      <xloc>326</xloc>
+      <yloc>208</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -196,53 +194,53 @@ FROM [Items Asegurados]
     <update_bypassed>N</update_bypassed>
     <lookup>
       <schema/>
-      <table>LU_FLOTA</table>
+      <table>LU_CLIENTE</table>
       <key>
-        <name>FLOTA_ID</name>
-        <field>FLOTA_ID</field>
+        <name>CLIENTE_ID</name>
+        <field>CLIENTE_ID</field>
         <condition>=</condition>
         <name2/>
       </key>
       <value>
         <name>FLOTA_ID</name>
         <rename>FLOTA_ID</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>CLIENTE_CP</name>
+        <rename>CLIENTE_CP</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>CLIENTE_EDAD</name>
+        <rename>CLIENTE_EDAD</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>CLIENTE_SEXO</name>
+        <rename>CLIENTE_SEXO</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>CLIENTE_ESTCIVIL</name>
+        <rename>CLIENTE_ESTCIVIL</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>CLIENTE_ID</name>
+        <rename>CLIENTE_ID</rename>
         <update>N</update>
       </value>
       <value>
-        <name>FLOTA_REF</name>
-        <rename>FLOTA_REF</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>FLOTA_UEN</name>
-        <rename>FLOTA_UEN</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>SEGMENTO_ID</name>
-        <rename>SEGMENTO_ID</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>FLOTA_OFI</name>
-        <rename>FLOTA_OFI</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>AGENTE_ID</name>
-        <rename>AGENTE_ID</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>DAY_ID</name>
-        <rename>DAY_ID</rename>
+        <name>LOCALIDAD_ID</name>
+        <rename>LOCALIDAD_ID</rename>
         <update>Y</update>
       </value>
     </lookup>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>477</xloc>
-      <yloc>216</yloc>
+      <xloc>520</xloc>
+      <yloc>290</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
