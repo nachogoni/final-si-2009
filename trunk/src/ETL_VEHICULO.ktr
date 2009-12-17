@@ -119,7 +119,48 @@
     </attributes>
   </connection>
   <order>
-  <hop> <from>Generate Rows</from><to>Select values</to><enabled>Y</enabled> </hop>  <hop> <from>Table input</from><to>Select values 2</to><enabled>Y</enabled> </hop>  <hop> <from>Select values</from><to>Insert &#47; Update</to><enabled>Y</enabled> </hop>  <hop> <from>Select values 2</from><to>Database lookup</to><enabled>Y</enabled> </hop>  <hop> <from>Database lookup</from><to>Select values 2 2</to><enabled>Y</enabled> </hop>  <hop> <from>Select values 2 2</from><to>Insert &#47; Update</to><enabled>Y</enabled> </hop>  </order>
+  <hop> <from>Generate Rows</from><to>Select values</to><enabled>Y</enabled> </hop>  <hop> <from>Table input</from><to>Select values 2</to><enabled>Y</enabled> </hop>  <hop> <from>Select values</from><to>Insert &#47; Update</to><enabled>Y</enabled> </hop>  <hop> <from>Select values 2</from><to>LOOKUP MODELO</to><enabled>Y</enabled> </hop>  <hop> <from>Select values 2 2</from><to>Insert &#47; Update</to><enabled>Y</enabled> </hop>  <hop> <from>LOOKUP MODELO</from><to>LOOKUP TIPO</to><enabled>Y</enabled> </hop>  <hop> <from>LOOKUP TIPO</from><to>Select values 2 2</to><enabled>Y</enabled> </hop>  </order>
+  <step>
+    <name>LOOKUP MODELO</name>
+    <type>DBLookup</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>olap</connection>
+    <cache>N</cache>
+    <cache_load_all>N</cache_load_all>
+    <cache_size>0</cache_size>
+    <lookup>
+      <schema/>
+      <table>LU_MODELO</table>
+      <orderby/>
+      <fail_on_multiple>N</fail_on_multiple>
+      <eat_row_on_failure>N</eat_row_on_failure>
+      <key>
+        <name>MODELO_ID</name>
+        <field>MODELO_ID</field>
+        <condition>=</condition>
+        <name2/>
+      </key>
+      <value>
+        <name>MODELO_ID</name>
+        <rename>MODELO_ID</rename>
+        <default>No informado_No informado</default>
+        <type>String</type>
+      </value>
+    </lookup>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>376</xloc>
+      <yloc>87</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
   <step>
     <name>Generate Rows</name>
     <type>RowGenerator</type>
@@ -310,7 +351,52 @@
         <storage_type/>
       </meta>    </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>338</xloc>
+      <xloc>280</xloc>
+      <yloc>87</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Select values 2 2</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>      <field>        <name>VEHICULO_ID</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>YEAR_ID</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>MODELO_ID_1</name>
+        <rename>MODELO_ID</rename>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>TIPO_ID_1</name>
+        <rename>TIPO_ID</rename>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>        <select_unspecified>N</select_unspecified>
+      <meta>        <name>TIPO_ID</name>
+        <rename>TIPO_ID</rename>
+        <type>Integer</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>573</xloc>
       <yloc>87</yloc>
       <draw>Y</draw>
       </GUI>
@@ -347,7 +433,7 @@ FROM VEHICULO</sql>
     </step>
 
   <step>
-    <name>Database lookup</name>
+    <name>LOOKUP TIPO</name>
     <type>DBLookup</type>
     <description/>
     <distribute>Y</distribute>
@@ -381,52 +467,7 @@ FROM VEHICULO</sql>
     </lookup>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>448</xloc>
-      <yloc>87</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Select values 2 2</name>
-    <type>SelectValues</type>
-    <description/>
-    <distribute>Y</distribute>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <fields>      <field>        <name>VEHICULO_ID</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>YEAR_ID</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>MODELO_ID</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>TIPO_ID_1</name>
-        <rename>TIPO_ID</rename>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>        <select_unspecified>N</select_unspecified>
-      <meta>        <name>TIPO_ID</name>
-        <rename>TIPO_ID</rename>
-        <type>Integer</type>
-        <length>-2</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>    </fields>     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>557</xloc>
+      <xloc>476</xloc>
       <yloc>87</yloc>
       <draw>Y</draw>
       </GUI>
