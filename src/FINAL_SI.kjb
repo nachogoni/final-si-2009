@@ -319,7 +319,7 @@
 ;CREATE INDEX idx_LU_ITEM_lookup
  ON LU_ITEM
 ( 
-  VEHICULO_ID
+  ITEM_ID
 )
 ;
 </sql>
