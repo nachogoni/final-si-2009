@@ -753,8 +753,8 @@
       </parameters>      <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>1092</xloc>
-      <yloc>767</yloc>
+      <xloc>1094</xloc>
+      <yloc>746</yloc>
       </entry>
     <entry>
       <name>ETL_MODELO</name>
@@ -782,8 +782,8 @@
       </parameters>      <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>501</xloc>
-      <yloc>768</yloc>
+      <xloc>503</xloc>
+      <yloc>747</yloc>
       </entry>
     <entry>
       <name>MODELO_TABLE_EXIST</name>
@@ -795,8 +795,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>340</xloc>
-      <yloc>768</yloc>
+      <xloc>342</xloc>
+      <yloc>747</yloc>
       </entry>
     <entry>
       <name>MODELO_TABLE_CREATION</name>
@@ -822,8 +822,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>427</xloc>
-      <yloc>693</yloc>
+      <xloc>429</xloc>
+      <yloc>672</yloc>
       </entry>
     <entry>
       <name>VEHICULO_TABLE_EXIST</name>
@@ -835,8 +835,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>911</xloc>
-      <yloc>767</yloc>
+      <xloc>913</xloc>
+      <yloc>746</yloc>
       </entry>
     <entry>
       <name>VEHICULO_TABLE_CREATION</name>
@@ -863,8 +863,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>998</xloc>
-      <yloc>682</yloc>
+      <xloc>1000</xloc>
+      <yloc>661</yloc>
       </entry>
     <entry>
       <name>ETL_TIPO</name>
@@ -893,8 +893,8 @@
       </parameters>      <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>784</xloc>
-      <yloc>767</yloc>
+      <xloc>786</xloc>
+      <yloc>746</yloc>
       </entry>
     <entry>
       <name>TIPO_TABLE_EXIST</name>
@@ -906,8 +906,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>623</xloc>
-      <yloc>767</yloc>
+      <xloc>625</xloc>
+      <yloc>746</yloc>
       </entry>
     <entry>
       <name>TIPO_TABLE_CREATION</name>
@@ -932,8 +932,165 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>710</xloc>
-      <yloc>692</yloc>
+      <xloc>712</xloc>
+      <yloc>671</yloc>
+      </entry>
+    <entry>
+      <name>ETL_FLOTA</name>
+      <description>Transformation</description>
+      <type>TRANS</type>
+      <filename>${Internal.Job.Filename.Directory}&#47;ETL_FLOTA.ktr</filename>
+      <transname/>
+      <directory/>
+      <arg_from_previous>N</arg_from_previous>
+      <params_from_previous>N</params_from_previous>
+      <exec_per_row>N</exec_per_row>
+      <clear_rows>N</clear_rows>
+      <clear_files>N</clear_files>
+      <set_logfile>N</set_logfile>
+      <logfile/>
+      <logext/>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <loglevel>Nothing</loglevel>
+      <cluster>N</cluster>
+      <slave_server_name/>
+      <set_append_logfile>N</set_append_logfile>
+      <wait_until_finished>Y</wait_until_finished>
+      <follow_abort_remote>N</follow_abort_remote>
+      <parameters>        <pass_all_parameters>Y</pass_all_parameters>
+      </parameters>      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>507</xloc>
+      <yloc>917</yloc>
+      </entry>
+    <entry>
+      <name>FLOTA_TABLE_EXIST</name>
+      <description>Table exists</description>
+      <type>TABLE_EXISTS</type>
+      <tablename>LU_FLOTA</tablename>
+      <schemaname/>
+      <connection>olap</connection>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>346</xloc>
+      <yloc>917</yloc>
+      </entry>
+    <entry>
+      <name>FLOTA_TABLE_CREATION</name>
+      <description>SQL</description>
+      <type>SQL</type>
+      <sql>CREATE TABLE LU_FLOTA
+(
+  FLOTA_ID LONG
+, FLOTA_REF TEXT(1)
+, FLOTA_UEN TEXT(1)
+, SEGMENTO_ID DOUBLE
+, FLOTA_OFI TEXT(2)
+, AGENTE_ID LONG
+, DAY_ID LONG
+)
+;CREATE INDEX idx_LU_FLOTA_lookup
+ ON LU_FLOTA
+( 
+  FLOTA_ID
+)
+;
+</sql>
+      <useVariableSubstitution>F</useVariableSubstitution>
+      <sqlfromfile>F</sqlfromfile>
+      <sqlfilename/>
+      <connection>olap</connection>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>433</xloc>
+      <yloc>842</yloc>
+      </entry>
+    <entry>
+      <name>ETL_ITEM</name>
+      <description>Transformation</description>
+      <type>TRANS</type>
+      <filename>${Internal.Job.Filename.Directory}&#47;ETL_ITEM.ktr</filename>
+      <transname/>
+      <directory/>
+      <arg_from_previous>N</arg_from_previous>
+      <params_from_previous>N</params_from_previous>
+      <exec_per_row>N</exec_per_row>
+      <clear_rows>N</clear_rows>
+      <clear_files>N</clear_files>
+      <set_logfile>N</set_logfile>
+      <logfile/>
+      <logext/>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <loglevel>Nothing</loglevel>
+      <cluster>N</cluster>
+      <slave_server_name/>
+      <set_append_logfile>N</set_append_logfile>
+      <wait_until_finished>Y</wait_until_finished>
+      <follow_abort_remote>N</follow_abort_remote>
+      <parameters>        <pass_all_parameters>Y</pass_all_parameters>
+      </parameters>      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>790</xloc>
+      <yloc>916</yloc>
+      </entry>
+    <entry>
+      <name>ITEM_TABLE_EXIST</name>
+      <description>Table exists</description>
+      <type>TABLE_EXISTS</type>
+      <tablename>LU_ITEM</tablename>
+      <schemaname/>
+      <connection>olap</connection>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>629</xloc>
+      <yloc>916</yloc>
+      </entry>
+    <entry>
+      <name>ITEM_TABLE_CREATION</name>
+      <description>SQL</description>
+      <type>SQL</type>
+      <sql>CREATE TABLE LU_ITEM
+(
+  VEHICULO_ID TEXT(255)
+, FLOTA_ID LONG
+, ITEM_ID TEXT(255)
+, ITEM_PQTE TEXT(50)
+, ITEM_SUMACA LONG
+, ITEM_USO TEXT(30)
+, ITEM_SUMAINFO LONG
+, ITEM_DIAS INTEGER
+, ITEM_PRIMARC DOUBLE
+, ITEM_PRIMACA DOUBLE
+, ITEM_PRIMA DOUBLE
+, ITEM_DEEMI DOUBLE
+, ITEM_RCADM DOUBLE
+, ITEM_RCFIN DOUBLE
+, ITEM_BONIF DOUBLE
+, ITEM_PREMIO DOUBLE
+)
+;CREATE INDEX idx_LU_ITEM_lookup
+ ON LU_ITEM
+( 
+  VEHICULO_ID
+)
+;
+</sql>
+      <useVariableSubstitution>F</useVariableSubstitution>
+      <sqlfromfile>F</sqlfromfile>
+      <sqlfilename/>
+      <connection>olap</connection>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>716</xloc>
+      <yloc>841</yloc>
       </entry>
   </entries>
   <hops>
@@ -1354,6 +1511,78 @@
     <hop>
       <from>START</from>
       <to>PRODUCTOR_TABLE_EXIST</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>FLOTA_TABLE_EXIST</from>
+      <to>ETL_FLOTA</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>FLOTA_TABLE_EXIST</from>
+      <to>FLOTA_TABLE_CREATION</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>FLOTA_TABLE_CREATION</from>
+      <to>ETL_FLOTA</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>ITEM_TABLE_EXIST</from>
+      <to>ETL_ITEM</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>ITEM_TABLE_EXIST</from>
+      <to>ITEM_TABLE_CREATION</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>ITEM_TABLE_CREATION</from>
+      <to>ETL_ITEM</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>ETL_FLOTA</from>
+      <to>ITEM_TABLE_EXIST</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>START</from>
+      <to>FLOTA_TABLE_EXIST</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>

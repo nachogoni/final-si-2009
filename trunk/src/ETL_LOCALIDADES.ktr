@@ -97,8 +97,30 @@
       <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
     </attributes>
   </connection>
+  <connection>
+    <name>prueba</name>
+    <server/>
+    <type>MSACCESS</type>
+    <access>ODBC</access>
+    <database>prueba</database>
+    <port>1521</port>
+    <username/>
+    <password>Encrypted </password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>1521</attribute></attribute>
+      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
+      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>N</attribute></attribute>
+      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
+    </attributes>
+  </connection>
   <order>
-  <hop> <from>Table input</from><to>Select values</to><enabled>Y</enabled> </hop>  <hop> <from>Select values</from><to>Insert &#47; Update</to><enabled>Y</enabled> </hop>  <hop> <from>Generate Rows</from><to>Select values 2</to><enabled>Y</enabled> </hop>  <hop> <from>Table input 2 2</from><to>Select values 2 2 2</to><enabled>Y</enabled> </hop>  <hop> <from>Select values 2</from><to>Insert &#47; Update</to><enabled>Y</enabled> </hop>  <hop> <from>Select values 2 2 2</from><to>Insert &#47; Update</to><enabled>Y</enabled> </hop>  </order>
+  <hop> <from>Table input</from><to>Select values</to><enabled>Y</enabled> </hop>  <hop> <from>Generate Rows</from><to>Select values 2</to><enabled>Y</enabled> </hop>  <hop> <from>Table input 2 2</from><to>Select values 2 2 2</to><enabled>Y</enabled> </hop>  <hop> <from>Select values</from><to>Insert &#47; Update</to><enabled>Y</enabled> </hop>  <hop> <from>Select values 2 2 2</from><to>Insert &#47; Update</to><enabled>Y</enabled> </hop>  <hop> <from>Select values 2</from><to>Insert &#47; Update</to><enabled>Y</enabled> </hop>  </order>
   <step>
     <name>Generate Rows</name>
     <type>RowGenerator</type>
@@ -209,7 +231,7 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
-    <fields>      <field>        <name>id</name>
+    <fields>      <field>        <name>ID</name>
         <rename>LOCALIDAD_ID</rename>
         <length>-2</length>
         <precision>-2</precision>
@@ -244,12 +266,12 @@
         <rename>LOCALIDAD_ID</rename>
         <length>-2</length>
         <precision>-2</precision>
-      </field>      <field>        <name>PRV</name>
-        <rename>PROVINCIA_ID</rename>
-        <length>-2</length>
-        <precision>-2</precision>
       </field>      <field>        <name>LOCALIDAD</name>
         <rename>LOCALIDAD_NOMBRE</rename>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>PRV</name>
+        <rename>PROVINCIA_ID</rename>
         <length>-2</length>
         <precision>-2</precision>
       </field>        <select_unspecified>N</select_unspecified>
@@ -271,22 +293,22 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
-    <fields>      <field>        <name>LOC</name>
+    <fields>      <field>        <name>ID</name>
         <rename>LOCALIDAD_ID</rename>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>PRV</name>
-        <rename>PROVINCIA_ID</rename>
         <length>-2</length>
         <precision>-2</precision>
       </field>      <field>        <name>LOCALIDAD</name>
         <rename>LOCALIDAD_NOMBRE</rename>
         <length>-2</length>
         <precision>-2</precision>
+      </field>      <field>        <name>PRV</name>
+        <rename>PROVINCIA_ID</rename>
+        <length>-2</length>
+        <precision>-2</precision>
       </field>        <select_unspecified>N</select_unspecified>
     </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>432</xloc>
+      <xloc>433</xloc>
       <yloc>287</yloc>
       <draw>Y</draw>
       </GUI>
@@ -335,8 +357,8 @@ WHERE Localidades.PRV = Provincias.PRV
            </partitioning>
     <connection>oltp</connection>
     <sql>SELECT
-  Localidades.LOC
-, 0
+  Localidades.LOC *100 + 0 as ID
+, 0 AS PRV
 , Localidades.LOCALIDAD
 FROM Localidades
 WHERE Localidades.PRV NOT IN
