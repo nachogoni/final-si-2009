@@ -335,8 +335,8 @@
       <schema/>
       <table>LU_ITEM</table>
       <key>
-        <name>VEHICULO_ID</name>
-        <field>VEHICULO_ID</field>
+        <name>ITEM_ID</name>
+        <field>ITEM_ID</field>
         <condition>=</condition>
         <name2/>
       </key>
@@ -348,7 +348,7 @@
       <value>
         <name>ITEM_ID</name>
         <rename>ITEM_ID</rename>
-        <update>Y</update>
+        <update>N</update>
       </value>
       <value>
         <name>ITEM_PQTE</name>
@@ -418,7 +418,7 @@
       <value>
         <name>VEHICULO_ID</name>
         <rename>VEHICULO_ID</rename>
-        <update>N</update>
+        <update>Y</update>
       </value>
     </lookup>
      <cluster_schema/>
@@ -678,49 +678,6 @@
     </step>
 
   <step>
-    <name>Table input</name>
-    <type>TableInput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <connection>oltp</connection>
-    <sql>SELECT
-  POLIZA,
-  POLIZA &amp; &apos;_&apos; &amp; VEH as itemid
-, COD_PQTE
-, SUMACA
-, TAUTO &amp; &apos;_&apos; &amp; YEAR(NOW()) - ANTIG AS VEHICULO_ID
-, VEHUSO
-, SUMAINFO
-, DIAS
-, PRIMARC
-, PRIMACA
-, PRIMA
-, DEEMI
-, RCADM
-, RCFIN
-, BONIF
-, PREMIO
-FROM [Items Asegurados]
-</sql>
-    <limit>0</limit>
-    <lookup/>
-    <execute_each_row>N</execute_each_row>
-    <variables_active>N</variables_active>
-    <lazy_conversion_active>N</lazy_conversion_active>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>77</xloc>
-      <yloc>155</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
     <name>Select values 2 2</name>
     <type>SelectValues</type>
     <description/>
@@ -799,6 +756,49 @@ FROM [Items Asegurados]
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
       <xloc>599</xloc>
       <yloc>277</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Table input</name>
+    <type>TableInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>oltp</connection>
+    <sql>SELECT
+  POLIZA,
+  POLIZA &amp; &apos;_&apos; &amp; VEH as itemid
+, COD_PQTE
+, SUMACA
+, TAUTO &amp; &apos;_&apos; &amp; YEAR(NOW()) - ANTIG AS VEHICULO_ID
+, VEHUSO
+, SUMAINFO
+, DIAS
+, PRIMARC
+, PRIMACA
+, PRIMA
+, DEEMI
+, RCADM
+, RCFIN
+, BONIF
+, PREMIO
+FROM [Items Asegurados]
+</sql>
+    <limit>0</limit>
+    <lookup/>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>77</xloc>
+      <yloc>155</yloc>
       <draw>Y</draw>
       </GUI>
     </step>

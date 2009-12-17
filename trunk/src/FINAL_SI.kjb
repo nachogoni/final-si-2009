@@ -105,8 +105,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>64</xloc>
-      <yloc>471</yloc>
+      <xloc>57</xloc>
+      <yloc>200</yloc>
       </entry>
     <entry>
       <name>ETL_VEHICULO</name>
@@ -134,8 +134,8 @@
       </parameters>      <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>529</xloc>
-      <yloc>386</yloc>
+      <xloc>522</xloc>
+      <yloc>115</yloc>
       </entry>
     <entry>
       <name>VEHICULO_TABLE_EXIST</name>
@@ -147,8 +147,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>348</xloc>
-      <yloc>386</yloc>
+      <xloc>341</xloc>
+      <yloc>115</yloc>
       </entry>
     <entry>
       <name>VEHICULO_TABLE_CREATION</name>
@@ -175,8 +175,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>435</xloc>
-      <yloc>301</yloc>
+      <xloc>428</xloc>
+      <yloc>30</yloc>
       </entry>
     <entry>
       <name>ETL_FLOTA</name>
@@ -204,8 +204,8 @@
       </parameters>      <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>411</xloc>
-      <yloc>661</yloc>
+      <xloc>404</xloc>
+      <yloc>390</yloc>
       </entry>
     <entry>
       <name>FLOTA_TABLE_EXIST</name>
@@ -217,8 +217,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>217</xloc>
-      <yloc>661</yloc>
+      <xloc>210</xloc>
+      <yloc>390</yloc>
       </entry>
     <entry>
       <name>FLOTA_TABLE_CREATION</name>
@@ -248,8 +248,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>337</xloc>
-      <yloc>586</yloc>
+      <xloc>311</xloc>
+      <yloc>302</yloc>
       </entry>
     <entry>
       <name>ETL_ITEM</name>
@@ -277,8 +277,8 @@
       </parameters>      <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>636</xloc>
-      <yloc>561</yloc>
+      <xloc>629</xloc>
+      <yloc>290</yloc>
       </entry>
     <entry>
       <name>ITEM_TABLE_EXIST</name>
@@ -290,13 +290,41 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>475</xloc>
-      <yloc>561</yloc>
+      <xloc>468</xloc>
+      <yloc>290</yloc>
       </entry>
     <entry>
       <name>ITEM_TABLE_CREATION</name>
       <description>SQL</description>
       <type>SQL</type>
+<<<<<<< .mine
+      <sql>CREATE TABLE LU_ITEM
+(
+  ITEM_ID TEXT(255)
+, FLOTA_ID LONG
+, ITEM_PQTE TEXT(50)
+, ITEM_SUMACA LONG
+, ITEM_USO TEXT(30)
+, ITEM_SUMAINFO LONG
+, ITEM_DIAS INTEGER
+, ITEM_PRIMARC DOUBLE
+, ITEM_PRIMACA DOUBLE
+, ITEM_PRIMA DOUBLE
+, ITEM_DEEMI DOUBLE
+, ITEM_RCADM DOUBLE
+, ITEM_RCFIN DOUBLE
+, ITEM_BONIF DOUBLE
+, ITEM_PREMIO DOUBLE
+, VEHICULO_ID TEXT(255)
+)
+;CREATE INDEX idx_LU_ITEM_lookup
+ ON LU_ITEM
+( 
+  ITEM_ID
+)
+;
+
+=======
       <sql>CREATE TABLE LU_ITEM
 (
   VEHICULO_ID TEXT(255)
@@ -322,6 +350,7 @@
   ITEM_ID
 )
 ;
+>>>>>>> .r40
 </sql>
       <useVariableSubstitution>F</useVariableSubstitution>
       <sqlfromfile>F</sqlfromfile>
@@ -330,8 +359,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>562</xloc>
-      <yloc>486</yloc>
+      <xloc>555</xloc>
+      <yloc>215</yloc>
       </entry>
     <entry>
       <name>ETL_CLIENTE</name>
@@ -339,7 +368,6 @@
       <type>TRANS</type>
       <filename>${Internal.Job.Filename.Directory}&#47;ETL_CLIENTE.ktr</filename>
       <transname/>
-      <directory/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
       <exec_per_row>N</exec_per_row>
@@ -360,8 +388,8 @@
       </parameters>      <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>824</xloc>
-      <yloc>415</yloc>
+      <xloc>817</xloc>
+      <yloc>144</yloc>
       </entry>
     <entry>
       <name>CLIENTE_TABLE_EXIST</name>
@@ -373,8 +401,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>663</xloc>
-      <yloc>415</yloc>
+      <xloc>656</xloc>
+      <yloc>144</yloc>
       </entry>
     <entry>
       <name>CLIENTE_TABLE_CREATION</name>
@@ -404,8 +432,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>753</xloc>
-      <yloc>337</yloc>
+      <xloc>746</xloc>
+      <yloc>66</yloc>
       </entry>
     <entry>
       <name>ETL_PAGOS</name>
@@ -413,7 +441,6 @@
       <type>TRANS</type>
       <filename>${Internal.Job.Filename.Directory}&#47;ETL_PAGOS.ktr</filename>
       <transname/>
-      <directory/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
       <exec_per_row>N</exec_per_row>
@@ -434,8 +461,8 @@
       </parameters>      <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>1087</xloc>
-      <yloc>415</yloc>
+      <xloc>1080</xloc>
+      <yloc>144</yloc>
       </entry>
     <entry>
       <name>PAGOS_TABLE_EXIST</name>
@@ -447,8 +474,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>926</xloc>
-      <yloc>415</yloc>
+      <xloc>919</xloc>
+      <yloc>144</yloc>
       </entry>
     <entry>
       <name>PAGOS_TABLE_CREATION</name>
@@ -474,8 +501,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>1013</xloc>
-      <yloc>340</yloc>
+      <xloc>1006</xloc>
+      <yloc>69</yloc>
       </entry>
     <entry>
       <name>ETL_SINIESTROS</name>
@@ -483,7 +510,6 @@
       <type>TRANS</type>
       <filename>${Internal.Job.Filename.Directory}&#47;ETL_SINIESTROS.ktr</filename>
       <transname/>
-      <directory/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
       <exec_per_row>N</exec_per_row>
@@ -504,8 +530,8 @@
       </parameters>      <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>1385</xloc>
-      <yloc>418</yloc>
+      <xloc>1378</xloc>
+      <yloc>147</yloc>
       </entry>
     <entry>
       <name>SINIESTROS_TABLE_EXIST</name>
@@ -517,8 +543,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>1224</xloc>
-      <yloc>418</yloc>
+      <xloc>1217</xloc>
+      <yloc>147</yloc>
       </entry>
     <entry>
       <name>SINIESTROS_TABLE_CREATION</name>
@@ -544,8 +570,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>1311</xloc>
-      <yloc>343</yloc>
+      <xloc>1304</xloc>
+      <yloc>72</yloc>
       </entry>
     <entry>
       <name>CREATE_PARENT_TABLES</name>
@@ -570,8 +596,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>235</xloc>
-      <yloc>471</yloc>
+      <xloc>190</xloc>
+      <yloc>201</yloc>
       </entry>
   </entries>
   <hops>
