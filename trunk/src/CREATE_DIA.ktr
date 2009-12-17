@@ -119,42 +119,7 @@
     </attributes>
   </connection>
   <order>
-  <hop> <from>SELECT MES DIA</from><to>CREATE_LU_DATE</to><enabled>Y</enabled> </hop>  <hop> <from>UNIQUE ROWS DIA</from><to>SELECT MES DIA</to><enabled>Y</enabled> </hop>  <hop> <from>SORT BY DIA</from><to>UNIQUE ROWS DIA</to><enabled>Y</enabled> </hop>  <hop> <from>CSV file input</from><to>SORT BY DIA</to><enabled>Y</enabled> </hop>  </order>
-  <step>
-    <name>SELECT MES DIA</name>
-    <type>SelectValues</type>
-    <description/>
-    <distribute>Y</distribute>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <fields>      <field>        <name>dia</name>
-        <rename>DAY_NUM</rename>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>dia_date</name>
-        <rename>DAY_DATE</rename>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>dia_id</name>
-        <rename>DAY_ID</rename>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>mes_id</name>
-        <rename>MONTH_ID</rename>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>        <select_unspecified>N</select_unspecified>
-    </fields>     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>554</xloc>
-      <yloc>176</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
+  <hop> <from>UNIQUE ROWS DIA</from><to>SELECT MES DIA</to><enabled>Y</enabled> </hop>  <hop> <from>SORT BY DIA</from><to>UNIQUE ROWS DIA</to><enabled>Y</enabled> </hop>  <hop> <from>CSV file input</from><to>SORT BY DIA</to><enabled>Y</enabled> </hop>  <hop> <from>SELECT MES DIA</from><to>Database lookup</to><enabled>Y</enabled> </hop>  <hop> <from>Database lookup</from><to>SELECT MES DIA 2</to><enabled>Y</enabled> </hop>  <hop> <from>SELECT MES DIA 2</from><to>CREATE_LU_DATE</to><enabled>Y</enabled> </hop>  </order>
   <step>
     <name>CREATE_LU_DATE</name>
     <type>TableOutput</type>
@@ -202,61 +167,7 @@
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>704</xloc>
-      <yloc>176</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>UNIQUE ROWS DIA</name>
-    <type>Unique</type>
-    <description/>
-    <distribute>Y</distribute>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-      <count_rows>N</count_rows>
-      <count_field/>
-    <fields>      <field>        <name>dia_id</name>
-        <case_insensitive>N</case_insensitive>
-        </field>      </fields>     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>404</xloc>
-      <yloc>176</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>SORT BY DIA</name>
-    <type>SortRows</type>
-    <description/>
-    <distribute>Y</distribute>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-      <directory>%%java.io.tmpdir%%</directory>
-      <prefix>out</prefix>
-      <sort_size/>
-      <free_memory>25</free_memory>
-      <compress>N</compress>
-      <compress_variable/>
-      <unique_rows>N</unique_rows>
-    <fields>
-      <field>
-        <name>dia_id</name>
-        <ascending>Y</ascending>
-        <case_sensitive>N</case_sensitive>
-      </field>
-    </fields>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>254</xloc>
+      <xloc>998</xloc>
       <yloc>176</yloc>
       <draw>Y</draw>
       </GUI>
@@ -399,6 +310,171 @@
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
       <xloc>128</xloc>
+      <yloc>176</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>SELECT MES DIA</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>      <field>        <name>dia</name>
+        <rename>DAY_NUM</rename>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>dia_date</name>
+        <rename>DAY_DATE</rename>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>dia_id</name>
+        <rename>DAY_ID</rename>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>mes_id</name>
+        <rename>MONTH_ID</rename>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>        <select_unspecified>N</select_unspecified>
+    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>563</xloc>
+      <yloc>176</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>SORT BY DIA</name>
+    <type>SortRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+      <directory>%%java.io.tmpdir%%</directory>
+      <prefix>out</prefix>
+      <sort_size/>
+      <free_memory>25</free_memory>
+      <compress>N</compress>
+      <compress_variable/>
+      <unique_rows>N</unique_rows>
+    <fields>
+      <field>
+        <name>dia_id</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+      </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>273</xloc>
+      <yloc>176</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>UNIQUE ROWS DIA</name>
+    <type>Unique</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+      <count_rows>N</count_rows>
+      <count_field/>
+    <fields>      <field>        <name>dia_id</name>
+        <case_insensitive>N</case_insensitive>
+        </field>      </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>418</xloc>
+      <yloc>176</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Database lookup</name>
+    <type>DBLookup</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>olap</connection>
+    <cache>N</cache>
+    <cache_load_all>N</cache_load_all>
+    <cache_size>0</cache_size>
+    <lookup>
+      <schema/>
+      <table>LU_MONTH</table>
+      <orderby/>
+      <fail_on_multiple>N</fail_on_multiple>
+      <eat_row_on_failure>N</eat_row_on_failure>
+      <key>
+        <name>MONTH_ID</name>
+        <field>MONTH_ID</field>
+        <condition>=</condition>
+        <name2/>
+      </key>
+      <value>
+        <name>MONTH_ID</name>
+        <rename>MONTH_ID</rename>
+        <default>0</default>
+        <type>Integer</type>
+      </value>
+    </lookup>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>708</xloc>
+      <yloc>176</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>SELECT MES DIA 2</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>      <field>        <name>DAY_NUM</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>DAY_DATE</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>DAY_ID</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>MONTH_ID_1</name>
+        <rename>MONTH_ID</rename>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>        <select_unspecified>N</select_unspecified>
+    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>853</xloc>
       <yloc>176</yloc>
       <draw>Y</draw>
       </GUI>
