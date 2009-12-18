@@ -105,7 +105,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>30</xloc>
+      <xloc>39</xloc>
       <yloc>209</yloc>
       </entry>
     <entry>
@@ -276,8 +276,8 @@
       </parameters>      <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>609</xloc>
-      <yloc>299</yloc>
+      <xloc>838</xloc>
+      <yloc>368</yloc>
       </entry>
     <entry>
       <name>BT_VENTA_POLIZA_TABLE_EXIST</name>
@@ -289,8 +289,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>439</xloc>
-      <yloc>299</yloc>
+      <xloc>668</xloc>
+      <yloc>368</yloc>
       </entry>
     <entry>
       <name>BT_VENTA_POLIZA_TABLE_CREATION</name>
@@ -336,8 +336,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>527</xloc>
-      <yloc>224</yloc>
+      <xloc>756</xloc>
+      <yloc>293</yloc>
       </entry>
     <entry>
       <name>ETL_CLIENTE</name>
@@ -438,8 +438,8 @@
       </parameters>      <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>901</xloc>
-      <yloc>370</yloc>
+      <xloc>1130</xloc>
+      <yloc>439</yloc>
       </entry>
     <entry>
       <name>PAGOS_TABLE_EXIST</name>
@@ -451,8 +451,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>740</xloc>
-      <yloc>370</yloc>
+      <xloc>969</xloc>
+      <yloc>439</yloc>
       </entry>
     <entry>
       <name>PAGOS_TABLE_CREATION</name>
@@ -481,8 +481,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>826</xloc>
-      <yloc>295</yloc>
+      <xloc>1055</xloc>
+      <yloc>364</yloc>
       </entry>
     <entry>
       <name>ETL_SINIESTROS</name>
@@ -712,24 +712,6 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>ETL_VENTA_POLIZA</from>
-      <to>CLIENTE_TABLE_EXIST</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>ETL_CLIENTE</from>
-      <to>PAGOS_TABLE_EXIST</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
       <from>SINIESTROS_TABLE_EXIST</from>
       <to>ETL_SINIESTROS</to>
       <from_nr>0</from_nr>
@@ -766,15 +748,6 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>START</from>
-      <to>CREATE_PARENT_TABLES</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>Y</unconditional>
-    </hop>
-    <hop>
       <from>CREATE_PARENT_TABLES</from>
       <to>FLOTA_TABLE_EXIST</to>
       <from_nr>0</from_nr>
@@ -793,7 +766,25 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>ETL_VEHICULO</from>
+      <from>PAGOS_TABLE_EXIST</from>
+      <to>ETL_PAGOS</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>ETL_VENTA_POLIZA</from>
+      <to>PAGOS_TABLE_EXIST</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>ETL_CLIENTE</from>
       <to>BT_VENTA_POLIZA_TABLE_EXIST</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
@@ -802,8 +793,17 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>PAGOS_TABLE_EXIST</from>
-      <to>ETL_PAGOS</to>
+      <from>START</from>
+      <to>CREATE_PARENT_TABLES</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>ETL_VEHICULO</from>
+      <to>CLIENTE_TABLE_EXIST</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
