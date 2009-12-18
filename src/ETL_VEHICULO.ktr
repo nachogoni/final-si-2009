@@ -121,47 +121,6 @@
   <order>
   <hop> <from>Generate Rows</from><to>Select values</to><enabled>Y</enabled> </hop>  <hop> <from>Table input</from><to>Select values 2</to><enabled>Y</enabled> </hop>  <hop> <from>Select values</from><to>Insert &#47; Update</to><enabled>Y</enabled> </hop>  <hop> <from>Select values 2</from><to>LOOKUP MODELO</to><enabled>Y</enabled> </hop>  <hop> <from>Select values 2 2</from><to>Insert &#47; Update</to><enabled>Y</enabled> </hop>  <hop> <from>LOOKUP MODELO</from><to>LOOKUP TIPO</to><enabled>Y</enabled> </hop>  <hop> <from>LOOKUP TIPO</from><to>Select values 2 2</to><enabled>Y</enabled> </hop>  </order>
   <step>
-    <name>LOOKUP MODELO</name>
-    <type>DBLookup</type>
-    <description/>
-    <distribute>Y</distribute>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <connection>olap</connection>
-    <cache>N</cache>
-    <cache_load_all>N</cache_load_all>
-    <cache_size>0</cache_size>
-    <lookup>
-      <schema/>
-      <table>LU_MODELO</table>
-      <orderby/>
-      <fail_on_multiple>N</fail_on_multiple>
-      <eat_row_on_failure>N</eat_row_on_failure>
-      <key>
-        <name>MODELO_ID</name>
-        <field>MODELO_ID</field>
-        <condition>=</condition>
-        <name2/>
-      </key>
-      <value>
-        <name>MODELO_ID</name>
-        <rename>MODELO_ID</rename>
-        <default>No informado_No informado</default>
-        <type>String</type>
-      </value>
-    </lookup>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>376</xloc>
-      <yloc>87</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
     <name>Generate Rows</name>
     <type>RowGenerator</type>
     <description/>
@@ -201,7 +160,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>No informa</nullif>
+        <nullif>No informado_No informado</nullif>
         <length>-1</length>
         <precision>-1</precision>
       </field>
@@ -273,6 +232,88 @@
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
       <xloc>700</xloc>
       <yloc>141</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>LOOKUP MODELO</name>
+    <type>DBLookup</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>olap</connection>
+    <cache>N</cache>
+    <cache_load_all>N</cache_load_all>
+    <cache_size>0</cache_size>
+    <lookup>
+      <schema/>
+      <table>LU_MODELO</table>
+      <orderby/>
+      <fail_on_multiple>N</fail_on_multiple>
+      <eat_row_on_failure>N</eat_row_on_failure>
+      <key>
+        <name>MODELO_ID</name>
+        <field>MODELO_ID</field>
+        <condition>=</condition>
+        <name2/>
+      </key>
+      <value>
+        <name>MODELO_ID</name>
+        <rename>MODELO_ID</rename>
+        <default>No informado_No informado</default>
+        <type>String</type>
+      </value>
+    </lookup>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>376</xloc>
+      <yloc>87</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>LOOKUP TIPO</name>
+    <type>DBLookup</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>olap</connection>
+    <cache>N</cache>
+    <cache_load_all>N</cache_load_all>
+    <cache_size>0</cache_size>
+    <lookup>
+      <schema/>
+      <table>LU_TIPO</table>
+      <orderby/>
+      <fail_on_multiple>N</fail_on_multiple>
+      <eat_row_on_failure>N</eat_row_on_failure>
+      <key>
+        <name>TIPO_ID</name>
+        <field>TIPO_ID</field>
+        <condition>=</condition>
+        <name2/>
+      </key>
+      <value>
+        <name>TIPO_ID</name>
+        <rename>TIPO_ID</rename>
+        <default>0</default>
+        <type>Integer</type>
+      </value>
+    </lookup>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>476</xloc>
+      <yloc>87</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -427,47 +468,6 @@ FROM VEHICULO</sql>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
       <xloc>174</xloc>
-      <yloc>87</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>LOOKUP TIPO</name>
-    <type>DBLookup</type>
-    <description/>
-    <distribute>Y</distribute>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <connection>olap</connection>
-    <cache>N</cache>
-    <cache_load_all>N</cache_load_all>
-    <cache_size>0</cache_size>
-    <lookup>
-      <schema/>
-      <table>LU_TIPO</table>
-      <orderby/>
-      <fail_on_multiple>N</fail_on_multiple>
-      <eat_row_on_failure>N</eat_row_on_failure>
-      <key>
-        <name>TIPO_ID</name>
-        <field>TIPO_ID</field>
-        <condition>=</condition>
-        <name2/>
-      </key>
-      <value>
-        <name>TIPO_ID</name>
-        <rename>TIPO_ID</rename>
-        <default>0</default>
-        <type>Integer</type>
-      </value>
-    </lookup>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>476</xloc>
       <yloc>87</yloc>
       <draw>Y</draw>
       </GUI>

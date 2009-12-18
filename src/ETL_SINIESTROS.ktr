@@ -120,7 +120,7 @@
     </attributes>
   </connection>
   <order>
-  <hop> <from>Table input</from><to>Select values</to><enabled>Y</enabled> </hop>  <hop> <from>Select values</from><to>LOOKUP_ITEM</to><enabled>Y</enabled> </hop>  <hop> <from>LOOKUP_ITEM</from><to>Select values 2</to><enabled>Y</enabled> </hop>  <hop> <from>Select values 2</from><to>Insert &#47; Update</to><enabled>Y</enabled> </hop>  </order>
+  <hop> <from>Table input</from><to>Select values</to><enabled>Y</enabled> </hop>  <hop> <from>Select values</from><to>LOOKUP_BT_VENTA_POLIZA</to><enabled>Y</enabled> </hop>  <hop> <from>LOOKUP_BT_VENTA_POLIZA</from><to>Select values 2</to><enabled>Y</enabled> </hop>  <hop> <from>Select values 2</from><to>Insert &#47; Update</to><enabled>Y</enabled> </hop>  </order>
   <step>
     <name>Insert &#47; Update</name>
     <type>InsertUpdate</type>
@@ -143,6 +143,18 @@
         <condition>=</condition>
         <name2/>
       </key>
+      <key>
+        <name>VEHICULO_ID</name>
+        <field>VEHICULO_ID</field>
+        <condition>=</condition>
+        <name2/>
+      </key>
+      <key>
+        <name>LOCALIDAD_ID</name>
+        <field>LOCALIDAD_ID</field>
+        <condition>=</condition>
+        <name2/>
+      </key>
       <value>
         <name>SINIESTRO_CNSTR</name>
         <rename>SINIESTRO_CNSTR</rename>
@@ -158,17 +170,27 @@
         <rename>ITEM_ID</rename>
         <update>N</update>
       </value>
+      <value>
+        <name>VEHICULO_ID</name>
+        <rename>VEHICULO_ID</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>LOCALIDAD_ID</name>
+        <rename>LOCALIDAD_ID</rename>
+        <update>Y</update>
+      </value>
     </lookup>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>619</xloc>
-      <yloc>222</yloc>
+      <xloc>771</xloc>
+      <yloc>220</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>LOOKUP_ITEM</name>
+    <name>LOOKUP_BT_VENTA_POLIZA</name>
     <type>DBLookup</type>
     <description/>
     <distribute>Y</distribute>
@@ -183,7 +205,7 @@
     <cache_size>0</cache_size>
     <lookup>
       <schema/>
-      <table>LU_ITEM</table>
+      <table>BT_VENTA_POLIZA</table>
       <orderby/>
       <fail_on_multiple>N</fail_on_multiple>
       <eat_row_on_failure>N</eat_row_on_failure>
@@ -199,10 +221,22 @@
         <default>0_0</default>
         <type>String</type>
       </value>
+      <value>
+        <name>VEHICULO_ID</name>
+        <rename>VEHICULO_ID</rename>
+        <default>Desconocido_No informa</default>
+        <type>String</type>
+      </value>
+      <value>
+        <name>LOCALIDAD_ID</name>
+        <rename>LOCALIDAD_ID</rename>
+        <default>0</default>
+        <type>Integer</type>
+      </value>
     </lookup>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>395</xloc>
+      <xloc>471</xloc>
       <yloc>222</yloc>
       <draw>Y</draw>
       </GUI>
@@ -233,7 +267,46 @@
       </field>        <select_unspecified>N</select_unspecified>
     </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>283</xloc>
+      <xloc>321</xloc>
+      <yloc>222</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Select values 2</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>      <field>        <name>SINIESTRO_CNSTR</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>SINIESTRO_MTSTR</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>ITEM_ID_1</name>
+        <rename>ITEM_ID</rename>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>VEHICULO_ID</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>LOCALIDAD_ID</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>        <select_unspecified>N</select_unspecified>
+    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>621</xloc>
       <yloc>222</yloc>
       <draw>Y</draw>
       </GUI>
@@ -264,37 +337,6 @@ FROM Siniestro
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
       <xloc>171</xloc>
-      <yloc>222</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Select values 2</name>
-    <type>SelectValues</type>
-    <description/>
-    <distribute>Y</distribute>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <fields>      <field>        <name>SINIESTRO_CNSTR</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>SINIESTRO_MTSTR</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>ITEM_ID_1</name>
-        <rename>ITEM_ID</rename>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>        <select_unspecified>N</select_unspecified>
-    </fields>     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>507</xloc>
       <yloc>222</yloc>
       <draw>Y</draw>
       </GUI>
