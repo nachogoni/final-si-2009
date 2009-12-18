@@ -56,6 +56,28 @@
       <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
     </attributes>
   </connection>
+  <connection>
+    <name>prueba</name>
+    <server/>
+    <type>MSACCESS</type>
+    <access>ODBC</access>
+    <database>prueba</database>
+    <port>1521</port>
+    <username/>
+    <password>Encrypted </password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>1521</attribute></attribute>
+      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
+      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>N</attribute></attribute>
+      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
+    </attributes>
+  </connection>
     <slaveservers>
     </slaveservers>
   <logconnection/>
@@ -819,8 +841,8 @@
       <sql>CREATE TABLE LU_SEGMENTO
 (
   SEGMENTO_ID INTEGER
-, SEGMENTO_NOMBRE TEXT(255)
 , CANAL_ID LONG
+, SEGMENTO_NOMBRE TEXT(255)
 )
 ;CREATE INDEX idx_LU_SEGMENTO_lookup
  ON LU_SEGMENTO
@@ -828,7 +850,6 @@
   SEGMENTO_ID
 )
 ;
-
 </sql>
       <useVariableSubstitution>F</useVariableSubstitution>
       <sqlfromfile>F</sqlfromfile>

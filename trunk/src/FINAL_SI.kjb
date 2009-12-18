@@ -105,8 +105,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>57</xloc>
-      <yloc>200</yloc>
+      <xloc>30</xloc>
+      <yloc>209</yloc>
       </entry>
     <entry>
       <name>ETL_VEHICULO</name>
@@ -134,8 +134,8 @@
       </parameters>      <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>522</xloc>
-      <yloc>115</yloc>
+      <xloc>493</xloc>
+      <yloc>124</yloc>
       </entry>
     <entry>
       <name>VEHICULO_TABLE_EXIST</name>
@@ -147,8 +147,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>341</xloc>
-      <yloc>115</yloc>
+      <xloc>312</xloc>
+      <yloc>124</yloc>
       </entry>
     <entry>
       <name>VEHICULO_TABLE_CREATION</name>
@@ -175,8 +175,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>428</xloc>
-      <yloc>30</yloc>
+      <xloc>399</xloc>
+      <yloc>39</yloc>
       </entry>
     <entry>
       <name>ETL_FLOTA</name>
@@ -204,8 +204,8 @@
       </parameters>      <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>404</xloc>
-      <yloc>390</yloc>
+      <xloc>375</xloc>
+      <yloc>399</yloc>
       </entry>
     <entry>
       <name>FLOTA_TABLE_EXIST</name>
@@ -217,8 +217,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>210</xloc>
-      <yloc>390</yloc>
+      <xloc>181</xloc>
+      <yloc>399</yloc>
       </entry>
     <entry>
       <name>FLOTA_TABLE_CREATION</name>
@@ -229,10 +229,9 @@
   FLOTA_ID LONG
 , FLOTA_REF TEXT(1)
 , FLOTA_UEN TEXT(1)
-, SEGMENTO_ID DOUBLE
+, SEGMENTO_ID INTEGER
 , FLOTA_OFI TEXT(2)
-, AGENTE_ID LONG
-, DAY_ID LONG
+, AGENTE_ID INTEGER
 )
 ;CREATE INDEX idx_LU_FLOTA_lookup
  ON LU_FLOTA
@@ -248,14 +247,14 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>311</xloc>
-      <yloc>302</yloc>
+      <xloc>280</xloc>
+      <yloc>324</yloc>
       </entry>
     <entry>
-      <name>ETL_ITEM</name>
+      <name>ETL_VENTA_POLIZA</name>
       <description>Transformation</description>
       <type>TRANS</type>
-      <filename>${Internal.Job.Filename.Directory}&#47;ETL_ITEM.ktr</filename>
+      <filename>${Internal.Job.Filename.Directory}&#47;ETL_VENTA_POLIZA.ktr</filename>
       <transname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
@@ -277,31 +276,33 @@
       </parameters>      <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>629</xloc>
-      <yloc>290</yloc>
+      <xloc>609</xloc>
+      <yloc>299</yloc>
       </entry>
     <entry>
-      <name>ITEM_TABLE_EXIST</name>
+      <name>BT_VENTA_POLIZA_TABLE_EXIST</name>
       <description>Table exists</description>
       <type>TABLE_EXISTS</type>
-      <tablename>LU_ITEM</tablename>
+      <tablename>BT_VENTA_POLIZA</tablename>
       <schemaname/>
       <connection>olap</connection>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>468</xloc>
-      <yloc>290</yloc>
+      <xloc>439</xloc>
+      <yloc>299</yloc>
       </entry>
     <entry>
-      <name>ITEM_TABLE_CREATION</name>
+      <name>BT_VENTA_POLIZA_TABLE_CREATION</name>
       <description>SQL</description>
       <type>SQL</type>
-<<<<<<< .mine
-      <sql>CREATE TABLE LU_ITEM
+      <sql>CREATE TABLE BT_VENTA_POLIZA
 (
   ITEM_ID TEXT(255)
-, FLOTA_ID LONG
+, FLOTA_ID INTEGER
+, VEHICULO_ID TEXT
+, LOCALIDAD_ID INTEGER
+, DAY_ID INTEGER
 , ITEM_PQTE TEXT(50)
 , ITEM_SUMACA LONG
 , ITEM_USO TEXT(30)
@@ -315,42 +316,18 @@
 , ITEM_RCFIN DOUBLE
 , ITEM_BONIF DOUBLE
 , ITEM_PREMIO DOUBLE
-, VEHICULO_ID TEXT(255)
+, ITEM_VENTA DOUBLE
 )
-;CREATE INDEX idx_LU_ITEM_lookup
- ON LU_ITEM
+;CREATE INDEX idx_BT_VENTA_POLIZA_lookup
+ ON BT_VENTA_POLIZA
 ( 
   ITEM_ID
+, FLOTA_ID
+, VEHICULO_ID
+, LOCALIDAD_ID
+, DAY_ID
 )
 ;
-
-=======
-      <sql>CREATE TABLE LU_ITEM
-(
-  VEHICULO_ID TEXT(255)
-, FLOTA_ID LONG
-, ITEM_ID TEXT(255)
-, ITEM_PQTE TEXT(50)
-, ITEM_SUMACA LONG
-, ITEM_USO TEXT(30)
-, ITEM_SUMAINFO LONG
-, ITEM_DIAS INTEGER
-, ITEM_PRIMARC DOUBLE
-, ITEM_PRIMACA DOUBLE
-, ITEM_PRIMA DOUBLE
-, ITEM_DEEMI DOUBLE
-, ITEM_RCADM DOUBLE
-, ITEM_RCFIN DOUBLE
-, ITEM_BONIF DOUBLE
-, ITEM_PREMIO DOUBLE
-)
-;CREATE INDEX idx_LU_ITEM_lookup
- ON LU_ITEM
-( 
-  ITEM_ID
-)
-;
->>>>>>> .r40
 </sql>
       <useVariableSubstitution>F</useVariableSubstitution>
       <sqlfromfile>F</sqlfromfile>
@@ -359,8 +336,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>555</xloc>
-      <yloc>215</yloc>
+      <xloc>527</xloc>
+      <yloc>224</yloc>
       </entry>
     <entry>
       <name>ETL_CLIENTE</name>
@@ -388,8 +365,8 @@
       </parameters>      <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>817</xloc>
-      <yloc>144</yloc>
+      <xloc>788</xloc>
+      <yloc>153</yloc>
       </entry>
     <entry>
       <name>CLIENTE_TABLE_EXIST</name>
@@ -401,8 +378,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>656</xloc>
-      <yloc>144</yloc>
+      <xloc>627</xloc>
+      <yloc>153</yloc>
       </entry>
     <entry>
       <name>CLIENTE_TABLE_CREATION</name>
@@ -415,8 +392,8 @@
 , CLIENTE_EDAD INTEGER
 , CLIENTE_SEXO TEXT(1)
 , CLIENTE_ESTCIVIL TEXT(30)
-, LOCALIDAD_ID LONG
-, FLOTA_ID DOUBLE
+, LOCALIDAD_ID INTEGER
+, FLOTA_ID INTEGER
 )
 ;CREATE INDEX idx_LU_CLIENTE_lookup
  ON LU_CLIENTE
@@ -432,8 +409,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>746</xloc>
-      <yloc>66</yloc>
+      <xloc>717</xloc>
+      <yloc>75</yloc>
       </entry>
     <entry>
       <name>ETL_PAGOS</name>
@@ -461,8 +438,8 @@
       </parameters>      <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>1080</xloc>
-      <yloc>144</yloc>
+      <xloc>901</xloc>
+      <yloc>370</yloc>
       </entry>
     <entry>
       <name>PAGOS_TABLE_EXIST</name>
@@ -474,8 +451,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>919</xloc>
-      <yloc>144</yloc>
+      <xloc>740</xloc>
+      <yloc>370</yloc>
       </entry>
     <entry>
       <name>PAGOS_TABLE_CREATION</name>
@@ -483,14 +460,17 @@
       <type>SQL</type>
       <sql>CREATE TABLE BT_PAGO
 (
-  ITEM_ID TEXT
-, PAGO_IMPORTE DOUBLE
-, PAGO_FECHA LONG
+  PAGO_IMPORTE DOUBLE
+, DAY_ID INTEGER
+, ITEM_ID TEXT
+, VEHICULO_ID TEXT
 )
 ;CREATE INDEX idx_BT_PAGO_lookup
  ON BT_PAGO
 ( 
   ITEM_ID
+, VEHICULO_ID
+, DAY_ID
 )
 ;
 </sql>
@@ -501,8 +481,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>1006</xloc>
-      <yloc>69</yloc>
+      <xloc>826</xloc>
+      <yloc>295</yloc>
       </entry>
     <entry>
       <name>ETL_SINIESTROS</name>
@@ -530,8 +510,8 @@
       </parameters>      <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>1378</xloc>
-      <yloc>147</yloc>
+      <xloc>1093</xloc>
+      <yloc>154</yloc>
       </entry>
     <entry>
       <name>SINIESTROS_TABLE_EXIST</name>
@@ -543,8 +523,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>1217</xloc>
-      <yloc>147</yloc>
+      <xloc>932</xloc>
+      <yloc>154</yloc>
       </entry>
     <entry>
       <name>SINIESTROS_TABLE_CREATION</name>
@@ -553,6 +533,8 @@
       <sql>CREATE TABLE BT_SINIESTRO
 (
   ITEM_ID TEXT
+, VEHICULO_ID TEXT
+, LOCALIDAD_ID INTEGER
 , SINIESTRO_CNSTR INTEGER
 , SINIESTRO_MTSTR LONG
 )
@@ -560,6 +542,8 @@
  ON BT_SINIESTRO
 ( 
   ITEM_ID
+, VEHICULO_ID
+, LOCALIDAD_ID
 )
 ;
 </sql>
@@ -570,8 +554,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>1304</xloc>
-      <yloc>72</yloc>
+      <xloc>1019</xloc>
+      <yloc>79</yloc>
       </entry>
     <entry>
       <name>CREATE_PARENT_TABLES</name>
@@ -596,8 +580,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>190</xloc>
-      <yloc>201</yloc>
+      <xloc>199</xloc>
+      <yloc>209</yloc>
       </entry>
   </entries>
   <hops>
@@ -656,8 +640,8 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>ITEM_TABLE_EXIST</from>
-      <to>ETL_ITEM</to>
+      <from>BT_VENTA_POLIZA_TABLE_EXIST</from>
+      <to>ETL_VENTA_POLIZA</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -665,8 +649,8 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>ITEM_TABLE_EXIST</from>
-      <to>ITEM_TABLE_CREATION</to>
+      <from>BT_VENTA_POLIZA_TABLE_EXIST</from>
+      <to>BT_VENTA_POLIZA_TABLE_CREATION</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -674,8 +658,8 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>ITEM_TABLE_CREATION</from>
-      <to>ETL_ITEM</to>
+      <from>BT_VENTA_POLIZA_TABLE_CREATION</from>
+      <to>ETL_VENTA_POLIZA</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -711,15 +695,6 @@
     </hop>
     <hop>
       <from>PAGOS_TABLE_EXIST</from>
-      <to>ETL_PAGOS</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>PAGOS_TABLE_EXIST</from>
       <to>PAGOS_TABLE_CREATION</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
@@ -737,7 +712,7 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>ETL_ITEM</from>
+      <from>ETL_VENTA_POLIZA</from>
       <to>CLIENTE_TABLE_EXIST</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
@@ -819,7 +794,16 @@
     </hop>
     <hop>
       <from>ETL_VEHICULO</from>
-      <to>ITEM_TABLE_EXIST</to>
+      <to>BT_VENTA_POLIZA_TABLE_EXIST</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>PAGOS_TABLE_EXIST</from>
+      <to>ETL_PAGOS</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
